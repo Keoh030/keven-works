@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Keven Ohlew — Product Manager, AI Enthusiast & Creative Technologist. Offen für Remote-Rollen.">
+<meta name="description" content="Keven Ohlew — Product Manager & AI Enthusiast aus Berlin. 18+ Jahre Kundenerfahrung, IT-Produktmanagement Umschulung, PSM I, KI-Projekte live deployed. Offen für Remote-Rollen in Product, Customer Success & AI Strategy.">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Keven Ohlew — Hire Me</title>
+<title>Keven Ohlew — Product Manager & AI Enthusiast | Berlin Remote</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -191,7 +191,137 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   .nav-links { gap: 1rem; }
   .sec, #hire { padding: 5rem 1.5rem; }
 }
+
+/* PROJECT PSI (Problem / Solution / Impact) */
+.proj-psi { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1.2rem; }
+.psi-block { display: flex; flex-direction: column; gap: .15rem; padding: .5rem .7rem; background: rgba(255,255,255,.03); border-left: 2px solid rgba(196,52,26,.35); }
+.psi-label { font-size: .46rem; letter-spacing: .22em; text-transform: uppercase; color: var(--rust); font-weight: 500; display: block; margin-bottom: .1rem; }
+.psi-text { font-size: .72rem; line-height: 1.6; color: var(--mid); }
+
+/* ANIMATED BAR ICONS */
+.sk-icon, .biz-icon { margin-bottom: 1rem; }
+.bar-icon { display: flex; flex-direction: column; gap: 4px; width: 36px; margin-bottom: 1rem; }
+.bar-icon .b { height: 3px; background: var(--rust); transform-origin: left; animation: barload 1.2s ease forwards; opacity: 0; }
+.bar-icon .b:nth-child(1) { width: 100%; animation-delay: .1s; }
+.bar-icon .b:nth-child(2) { width: 65%; animation-delay: .25s; }
+.bar-icon .b:nth-child(3) { width: 40%; animation-delay: .4s; }
+@keyframes barload { 0%{opacity:0;transform:scaleX(0)} 100%{opacity:1;transform:scaleX(1)} }
+
+/* BIZ ICON — single accent line */
+.line-icon { width: 28px; height: 2px; background: var(--rust); margin-bottom: 1rem; position: relative; }
+.line-icon::after { content:''; position:absolute; top: 6px; left: 0; width: 16px; height: 2px; background: rgba(196,52,26,.4); }
+
+/* STAT NUM override — no change needed */
+
 </style>
+
+<!-- ═══ SEO & SOCIAL ═══ -->
+
+<!-- Primary Meta -->
+<meta name="author" content="Keven Ohlew">
+<meta name="keywords" content="Keven Ohlew, Product Manager Berlin, AI Consultant, Customer Success Manager, KI Automation, n8n Automatisierung, Prompt Engineering, IT Produktmanagement, Remote Jobs Berlin, Quereinsteiger KI, Digital Transformation, Scrum PSM, Hire Me">
+<meta name="robots" content="index, follow">
+<meta name="language" content="de">
+<link rel="canonical" href="https://keoh030.github.io/keven-works/">
+
+<!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Keven Ohlew — Product Manager & AI Enthusiast">
+<meta property="og:description" content="18+ Jahre Kundenerfahrung. 8+ KI-Zertifikate. Projekte live gebaut. Ich suche Remote-Rollen in Product Management, Customer Success oder AI Strategy.">
+<meta property="og:url" content="https://keoh030.github.io/keven-works/">
+<meta property="og:site_name" content="Keven Ohlew Portfolio">
+<meta property="og:locale" content="de_DE">
+<meta property="profile:first_name" content="Keven">
+<meta property="profile:last_name" content="Ohlew">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keven Ohlew — Product Manager & AI Enthusiast">
+<meta name="twitter:description" content="18+ Jahre Kundenerfahrung. 8+ KI-Zertifikate. Offen für Remote-Rollen in Product, Customer Success & AI Strategy.">
+
+<!-- Schema.org Person — das lesen Google & Perplexity direkt -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Keven Ohlew",
+  "givenName": "Keven",
+  "familyName": "Ohlew",
+  "jobTitle": "Product Manager & AI Enthusiast",
+  "description": "Quereinsteiger mit 18+ Jahren Kundenerfahrung, abgeschlossener Umschulung IT-Produktmanagement und nachweisbarer KI-Kompetenz. Offen für Remote-Rollen in Product Management, Customer Success und AI Strategy.",
+  "url": "https://keoh030.github.io/keven-works/",
+  "email": "kevenohlew@googlemail.de",
+  "telephone": "+4915126640439",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/keven-ohlew",
+    "https://keoh030.github.io/Muse-"
+  ],
+  "knowsAbout": [
+    "Product Management",
+    "AI Automation",
+    "Customer Success",
+    "n8n",
+    "Prompt Engineering",
+    "Scrum",
+    "Digital Transformation",
+    "UX Research"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Professional Scrum Master I (PSM I)",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Scrum.org" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Digital Transformation Manager",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "IHK München" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "AI for Product Management",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Google Cloud" }
+    }
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Franklin Institute of Sciences"
+  },
+  "seeks": {
+    "@type": "JobPosting",
+    "title": "Product Manager / Customer Success Manager / AI Strategist",
+    "jobLocationType": "TELECOMMUTE",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Open to opportunities"
+    }
+  }
+}
+</script>
+
+<!-- Schema.org WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Keven Ohlew — Portfolio & Hire Me",
+  "url": "https://keoh030.github.io/keven-works/",
+  "description": "Portfolio und Hire-Me Seite von Keven Ohlew — Product Manager, AI Enthusiast und Creative Technologist aus Berlin.",
+  "author": {
+    "@type": "Person",
+    "name": "Keven Ohlew"
+  }
+}
+</script>
+<!-- ═══════════════════════════════════════ -->
 </head>
 <body>
 
@@ -214,18 +344,18 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <section id="hero">
   <div class="hero-glow"></div>
   <div>
-    <div class="avail rv"><div class="dot"></div>Verfügbar · Remote · Berlin</div>
+    <div class="avail rv"><div class="dot"></div>Sofort verfügbar · Remote · Berlin</div>
     <h1 class="hero-name rv">KEVEN<br><span class="r">OHLEW</span></h1>
     <div class="hero-role rv" id="role-txt">Product Manager</div>
-    <p class="hero-desc rv">Ich übersetze Ideen in digitale Produkte — mit KI, Empathie und dem Willen, Dinge wirklich zu bauen. Nicht nur zu planen.</p>
+    <p class="hero-desc rv">Ich baue Produkte und KI-Workflows die Prozesse messbar schneller machen — echte Automatisierungen, echte Deployments, echte Ergebnisse. Verfügbar ab sofort.</p>
     <div class="btns rv">
       <a href="#hire" class="btn-p">Hire me →</a>
       <a href="#projects" class="btn-s">Projekte ansehen</a>
     </div>
   </div>
   <div class="stats">
-    <div class="stat rv"><div class="stat-n">15+</div><div class="stat-l">Jahre Kundenerfahrung</div></div>
-    <div class="stat rv" style="transition-delay:.12s"><div class="stat-n">8+</div><div class="stat-l">Zertifikate 2025/26</div></div>
+    <div class="stat rv"><div class="stat-n">18+</div><div class="stat-l">Jahre Berufserfahrung</div></div>
+    <div class="stat rv" style="transition-delay:.12s"><div class="stat-n">10+</div><div class="stat-l">Zertifikate 2025/26</div></div>
     <div class="stat rv" style="transition-delay:.24s"><div class="stat-n">0€</div><div class="stat-l">Budget — alles selbst</div></div>
   </div>
 </section>
@@ -233,24 +363,24 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <!-- SKILLS -->
 <section id="skills" class="sec sec-dark">
   <p class="sec-label rv">§ 01 — Was ich mitbringe</p>
-  <h2 class="sec-title rv">Drei Welten.<br><strong>Eine Person.</strong></h2>
+  <h2 class="sec-title rv">Drei Skills.<br><strong>Eine seltene Kombination.</strong></h2>
   <div class="skills-grid">
     <div class="skill-card rv">
-      <div class="sk-icon">⚡</div>
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
       <div class="sk-title">Product &amp; Strategy</div>
       <p class="sk-desc">Roadmapping, User Research, Customer Journey Mapping, Agile Frameworks. Ich denke in Systemen — nicht in Einzelaufgaben.</p>
       <div class="sk-tags"><span class="sk-tag">Scrum PSM I</span><span class="sk-tag">Kanban</span><span class="sk-tag">OKRs</span><span class="sk-tag">RICE</span><span class="sk-tag">MoSCoW</span></div>
     </div>
     <div class="skill-card rv" style="transition-delay:.1s">
-      <div class="sk-icon">🤖</div>
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
       <div class="sk-title">AI &amp; Automation</div>
       <p class="sk-desc">Ich baue echte AI-Workflows — nicht nur Prompts. n8n, Claude API, Automatisierungen die für mich arbeiten während ich schlafe.</p>
       <div class="sk-tags"><span class="sk-tag">n8n</span><span class="sk-tag">Claude</span><span class="sk-tag">Prompt Eng.</span><span class="sk-tag">ChatGPT</span><span class="sk-tag">Higgsfield</span></div>
     </div>
     <div class="skill-card rv" style="transition-delay:.2s">
-      <div class="sk-icon">🎯</div>
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
       <div class="sk-title">Customer Success</div>
-      <p class="sk-desc">15+ Jahre Menschen begeistern, überzeugen und binden. Empathie ist keine Soft Skill — es ist mein schärfstes Werkzeug.</p>
+      <p class="sk-desc">18+ Jahre Menschen begeistern, überzeugen und binden. Empathie ist keine Soft Skill — es ist mein schärfstes Werkzeug.</p>
       <div class="sk-tags"><span class="sk-tag">CRM</span><span class="sk-tag">Onboarding</span><span class="sk-tag">Churn Prevention</span><span class="sk-tag">Stakeholder</span></div>
     </div>
   </div>
@@ -259,27 +389,39 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <!-- PROJECTS -->
 <section id="projects" class="sec">
   <p class="sec-label rv">§ 02 — Projekte</p>
-  <h2 class="sec-title rv">Keine Slides.<br><strong>Echte Builds.</strong></h2>
+  <h2 class="sec-title rv">Gebaut, nicht<br><strong>geredet.</strong></h2>
   <div class="proj-grid">
     <div class="proj-card rv">
       <div class="proj-n">01 / 03</div>
       <div class="proj-title">The Digital Muse</div>
-      <p class="proj-desc">Vollständiges AI-Brand-System: Konzept, Prompt Engineering, Brand Identity, Portfolio-Website — allein gebaut und live deployed. Mit Security-Audit und Formspree-Integration.</p>
-      <div class="proj-tags"><span class="proj-tag">AI · Prompt Engineering</span><span class="proj-tag">Brand Identity</span><span class="proj-tag">HTML/CSS/JS</span><span class="proj-tag">Live ✓</span></div>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Kein Budget, keine Agentur — trotzdem professionelle Online-Präsenz aufbauen.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">Vollständiges AI-Brand-System: Prompt Engineering, Brand Identity, Portfolio-Website — allein gebaut.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">Live deployed in 2 Wochen. 0€ Budget. Zeigt was möglich ist wenn man baut statt plant.</span></div>
+      </div>
+      <div class="proj-tags"><span class="proj-tag">AI · Prompt Engineering</span><span class="proj-tag">Brand Identity</span><span class="proj-tag">HTML/CSS/JS</span><span class="proj-tag">Live</span></div>
       <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="proj-link">Live ansehen →</a>
     </div>
     <div class="proj-card rv" style="transition-delay:.1s">
       <div class="proj-n">02 / 03</div>
       <div class="proj-title">InGrow — Habit App</div>
-      <p class="proj-desc">Vollständiger UX/PM-Prozess: 5 Tiefeninterviews, Affinity Mapping, 3 Personas, MoSCoW, User Story Map, klickbarer Prototyp. Abschlussprojekt Franklin Institute.</p>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Habit-Apps verlieren Nutzer weil sie auf Disziplin setzen — nicht auf Motivation.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">5 Tiefeninterviews, 3 Personas, MoSCoW-Priorisierung, User Story Map → klickbarer Prototyp.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">Validiertes Konzept: Beziehung als Retention-Treiber schlägt Gamification in allen Nutzer-Tests.</span></div>
+      </div>
       <div class="proj-tags"><span class="proj-tag">UX Research</span><span class="proj-tag">Product Strategy</span><span class="proj-tag">Prototyping</span><span class="proj-tag">Case Study</span></div>
       <a href="#ingrow" class="proj-link">Case Study →</a>
     </div>
     <div class="proj-card rv" style="transition-delay:.2s">
       <div class="proj-n">03 / 03</div>
       <div class="proj-title">Job Automation</div>
-      <p class="proj-desc">Automatisierung die täglich Stellen findet, Lebenslauf anpasst und in V2 eine No-Code App für das Problem der Firma baut. Live dokumentiert.</p>
-      <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">AI Research</span><span class="proj-tag">No-Code</span><span class="proj-tag">In Progress 🔨</span></div>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Bewerbungsprozesse sind ineffizient — täglich dieselben manuellen Schritte für jeden Job.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">n8n-Workflow: automatische Stellensuche, KI-gestützte CV-Anpassung, Firmenrecherche in einem Durchlauf.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">V2 in Entwicklung: No-Code App die das gleiche Problem für andere Firmen löst. Live auf LinkedIn dokumentiert.</span></div>
+      </div>
+      <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">AI Research</span><span class="proj-tag">No-Code</span><span class="proj-tag">In Progress</span></div>
       <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="proj-link">Follow live →</a>
     </div>
   </div>
@@ -313,9 +455,9 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
       <div class="insight-t">„Motivation ist ein emotionales Problem — kein Produktivitätsproblem. Beziehung ist ein stärkerer Treiber als Gamification."</div>
     </div>
     <div class="biz-grid rv">
-      <div class="biz-card"><div class="biz-icon">🌱</div><div class="biz-title">Freemium</div><div class="biz-desc">Premium-Erweiterungen für Kernnutzer</div></div>
-      <div class="biz-card"><div class="biz-icon">🏥</div><div class="biz-title">B2B2C</div><div class="biz-desc">Krankenkassen · Prävention · Mental Health</div></div>
-      <div class="biz-card"><div class="biz-icon">🎭</div><div class="biz-title">Brand Asset</div><div class="biz-desc">Maskottchen als langfristiges Brand-IP</div></div>
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">Freemium</div><div class="biz-desc">Premium-Erweiterungen für Kernnutzer</div></div>
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">B2B2C</div><div class="biz-desc">Krankenkassen · Prävention · Mental Health</div></div>
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">Brand Asset</div><div class="biz-desc">Maskottchen als langfristiges Brand-IP</div></div>
     </div>
   </div>
 </section>
@@ -335,7 +477,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
       <div class="chat-msgs" id="chat-msgs">
         <div class="msg">
           <div class="av">KO</div>
-          <div class="bub">Hi! Frag mich alles über Keven — Erfahrung, Projekte, Gehaltsvorstellung oder warum er der richtige für deine Rolle ist. 👋</div>
+          <div class="bub">Hi! Frag mich alles über Keven — Erfahrung, Projekte, Gehaltsvorstellung oder warum er der richtige für deine Rolle ist.</div>
         </div>
       </div>
       <div class="chat-sugg">
@@ -375,9 +517,9 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <section id="hire">
   <p class="sec-label" style="color:rgba(240,235,227,.55);text-align:center;position:relative;z-index:1">§ 05 — Let's work</p>
   <div class="hire-title">HIRE<br>ME.</div>
-  <p class="hire-sub">Remote · Product · Customer Success · AI Strategy</p>
+  <p class="hire-sub">Remote · Sofort verfügbar · Product · AI Strategy · Customer Success</p>
   <div class="hire-btns">
-    <a href="mailto:kevenohlew@googlemail.de" class="btn-hire">E-Mail schreiben →</a>
+    <a href="/cdn-cgi/l/email-protection#2d46485b4843424541485a6d4a42424a4148404c4441034948" class="btn-hire">E-Mail schreiben →</a>
     <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="btn-hire-o">LinkedIn →</a>
     <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="btn-hire-o">Portfolio →</a>
   </div>
@@ -389,12 +531,12 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   <div class="f-links">
     <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="f-a">LinkedIn</a>
     <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="f-a">Portfolio</a>
-    <a href="mailto:kevenohlew@googlemail.de" class="f-a">E-Mail</a>
+    <a href="/cdn-cgi/l/email-protection#3c57594a5952535450594b7c5b53535b5059515d5550125859" class="f-a">E-Mail</a>
   </div>
   <div class="f-copy">© 2026 Keven Ohlew · Berlin</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
   'use strict';
 
@@ -496,8 +638,32 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 
   function getReply(raw) {
     var t = raw.toLowerCase();
+    // PM knowledge
+    if (t.indexOf('scrum') !== -1 || t.indexOf('agile') !== -1 || t.indexOf('sprint') !== -1) {
+      return 'Keven ist PSM I zertifiziert (Scrum.org). Er hat Scrum-Prozesse in Projekten angewendet: Sprint Planning, Daily Standups, Retrospektiven, Backlog Refinement. Sein Fokus: Scrum als Werkzeug nutzen, nicht als Religion betreiben.';
+    }
+    if (t.indexOf('roadmap') !== -1 || t.indexOf('priorisier') !== -1 || t.indexOf('backlog') !== -1) {
+      return 'Keven hat Roadmaps mit RICE und MoSCoW priorisiert — beide Methoden setzt er gezielt ein. RICE für datengetriebene Entscheidungen, MoSCoW für schnelle Team-Alignment. Beim InGrow-Projekt hat er das komplett durchgeführt.';
+    }
+    if (t.indexOf('stakeholder') !== -1 || t.indexOf('kommunikat') !== -1) {
+      return 'Stakeholder-Kommunikation ist eine seiner stärksten Seiten — 18+ Jahre Erfahrung mit anspruchsvollen Kunden auf Entscheiderebene. Er übersetzt technische Themen in Business-Sprache und umgekehrt.';
+    }
+    if (t.indexOf('discovery') !== -1 || t.indexOf('research') !== -1 || t.indexOf('interview') !== -1 || t.indexOf('nutzer') !== -1) {
+      return 'Keven hat User Discovery beim InGrow-Projekt durchgeführt: 5 qualitative Tiefeninterviews, Affinity Mapping, Empathy Maps, 3 Personas. Erkenntnis: Motivation ist ein emotionales Problem, kein Produktivitätsproblem.';
+    }
+    if (t.indexOf('kpi') !== -1 || t.indexOf('metrik') !== -1 || t.indexOf('data') !== -1 || t.indexOf('metr') !== -1) {
+      return 'Keven denkt in Metriken: Retention, Activation Rate, Task Completion. Beim InGrow-Projekt hat er ein KPI-Framework definiert. Bei Automationen misst er Zeit-Ersparnis und Fehlerreduktion als primäre Impact-Metriken.';
+    }
+    if (t.indexOf('mvp') !== -1 || t.indexOf('prototyp') !== -1 || t.indexOf('launch') !== -1) {
+      return 'Keven hat mit MVP Canvas gearbeitet und einen klickbaren Prototyp in Figma deployed. Sein Ansatz: so früh wie möglich etwas Testbares bauen — Feedback vor Features.';
+    }
+    if (t.indexOf('automation') !== -1 || t.indexOf('n8n') !== -1 || t.indexOf('workflow') !== -1) {
+      return 'Keven baut echte n8n-Workflows: Datenextraktion, KI-gestützte Verarbeitung, automatische Outputs. Sein Job-Automation-Projekt zeigt das live — täglich laufende Prozesse die sonst Stunden dauern würden.';
+    }
+
+    var t = raw.toLowerCase();
     if (t.indexOf('besonder') !== -1 || t.indexOf('unique') !== -1 || t.indexOf('unterschied') !== -1) {
-      return 'Keven verbindet drei seltene Welten: 15+ Jahre echte Kundenerfahrung, fundiertes IT-Produktmanagement (8+ Zertifikate) und echte AI-Kompetenz. Er baut Workflows, keine Prompts. Diese Kombination findet man kaum.';
+      return 'Keven verbindet drei seltene Welten: 18+ Jahre echte Kundenerfahrung, fundiertes IT-Produktmanagement (10+ Zertifikate) und echte AI-Kompetenz. Er baut Workflows, keine Prompts. Diese Kombination findet man kaum.';
     }
     if (t.indexOf('rolle') !== -1 || t.indexOf('job') !== -1 || t.indexOf('stelle') !== -1 || t.indexOf('position') !== -1) {
       return 'Keven sucht Remote-Rollen in: Product Manager, Customer Success Manager oder AI Strategist. Berlin/Hybrid auch möglich. Sofort verfügbar.';
@@ -523,7 +689,13 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     if (t.indexOf('warum') !== -1 || t.indexOf('hire') !== -1 || t.indexOf('einstell') !== -1) {
       return 'Weil Keven nicht redet — er baut. The Digital Muse entstand in 2 Wochen ohne Budget. InGrow zeigt strategisches PM-Denken von Anfang bis Ende. Beide Projekte sind live nachweisbar.';
     }
-    return 'Gute Frage! Schreib Keven direkt: kevenohlew@googlemail.de — oder schau sein Portfolio: keoh030.github.io/Muse-';
+    var fallbacks = [
+      'Das weiß ich nicht genau — aber: Keven ist PSM I zertifiziert, hat n8n-Workflows gebaut die täglich laufen, und hat ein Produkt komplett von Research bis Prototyp entwickelt. Was willst du genauer wissen?',
+      'Gute Frage! Was ich sagen kann: Keven kombiniert 18+ Jahre Erfahrung mit Menschen und Prozessen, echte KI-Projekte und 10+ Zertifikate. Frag mich nach Scrum, Roadmaps, Projekten oder Gehaltsvorstellung.',
+      'Da bin ich überfragt — frag Keven direkt: kevenohlew@googlemail.de. Aber vorher: Er beherrscht Roadmapping, User Research, Prompt Engineering und Automatisierung mit n8n. Eine seltene Kombination.',
+      'Das weiß ich nicht — aber Keven baut statt zu planen: Digital Muse live in 2 Wochen, Job Automation täglich laufend, InGrow von Interview bis Prototyp. Was davon interessiert dich?',
+    ];
+    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
   }
 
   function sendMsg() {

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://keven-ohlew.com/sitemap.xml

@@ -207,10 +207,14 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 /* ANIMATED BAR ICONS */
 .sk-icon, .biz-icon { margin-bottom: 1rem; }
 .bar-icon { display: flex; flex-direction: column; gap: 4px; width: 36px; margin-bottom: 1rem; }
-.bar-icon .b { height: 3px; background: var(--rust); transform-origin: left; animation: barload 1.2s ease forwards; opacity: 0; }
-.bar-icon .b:nth-child(1) { width: 100%; animation-delay: .1s; }
-.bar-icon .b:nth-child(2) { width: 65%; animation-delay: .25s; }
-.bar-icon .b:nth-child(3) { width: 40%; animation-delay: .4s; }
+.bar-icon .b { height: 3px; background: var(--rust); transform-origin: left; opacity: 0; transform: scaleX(0); transition: none; }
+.bar-icon .b:nth-child(1) { width: 100%; }
+.bar-icon .b:nth-child(2) { width: 65%; }
+.bar-icon .b:nth-child(3) { width: 40%; }
+.skill-card.on .bar-icon .b { animation: barload 1.2s ease forwards; }
+.skill-card.on .bar-icon .b:nth-child(1) { animation-delay: .1s; }
+.skill-card.on .bar-icon .b:nth-child(2) { animation-delay: .25s; }
+.skill-card.on .bar-icon .b:nth-child(3) { animation-delay: .4s; }
 @keyframes barload { 0%{opacity:0;transform:scaleX(0)} 100%{opacity:1;transform:scaleX(1)} }
 
 /* BIZ ICON — single accent line */
@@ -386,7 +390,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     <div class="skill-card rv" style="transition-delay:.2s">
       <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
       <div class="sk-title">Customer Success</div>
-      <p class="sk-desc">18+ Jahre Menschen begeistern, überzeugen und binden. Empathie ist keine Soft Skill — es ist mein schärfstes Werkzeug.</p>
+      <p class="sk-desc">18+ Jahre Menschen begeistern, überzeugen und binden. Empathie ist kein Soft Skill — es ist mein schärfstes Werkzeug.</p>
       <div class="sk-tags"><span class="sk-tag">CRM</span><span class="sk-tag">Onboarding</span><span class="sk-tag">Churn Prevention</span><span class="sk-tag">Stakeholder</span></div>
     </div>
   </div>

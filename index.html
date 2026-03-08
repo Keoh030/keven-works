@@ -28,8 +28,10 @@ body { background: var(--black); color: var(--off); font-family: 'DM Sans', sans
 
 /* CURSOR */
 #cur, #cur-r { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; top: 0; left: 0; transform: translate(-50%,-50%); }
-#cur { width: 8px; height: 8px; background: var(--rust); }
-#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s; }
+#cur { width: 8px; height: 8px; background: var(--rust); transition: background .25s; }
+#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s, border-color .25s; }
+#cur.on-red { background: var(--off); }
+#cur-r.on-red { border-color: rgba(240,235,227,.5); }
 
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,7,.94); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.05); }
@@ -40,6 +42,33 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 .nav-a:hover { color: var(--off); }
 .nav-cta { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; background: var(--rust); color: var(--off); padding: .65rem 1.5rem; text-decoration: none; transition: background .25s; font-weight: 500; }
 .nav-cta:hover { background: #a02a14; }
+
+/* HAMBURGER */
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--off); transition: transform .3s, opacity .3s; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 680px) {
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(8,8,7,.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-a { font-size: .65rem; padding: .85rem 2rem; width: 100%; text-align: center; }
+  .nav-cta { margin-top: .5rem; padding: .75rem 2.5rem; font-size: .65rem; }
+}
 
 /* HERO */
 #hero { min-height: 100vh; padding: 8rem 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
@@ -159,7 +188,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 .cert-coming { opacity: .5; border-style: dashed; }
 
 /* HIRE */
-#hire { padding: 9rem 3rem; background: var(--rust); text-align: center; position: relative; overflow: hidden; }
+#hire { padding: 6rem 3rem; background: var(--rust); text-align: center; position: relative; overflow: hidden; }
 #hire::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255,255,255,.04) 0%, transparent 70%); }
 .hire-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 14vw, 11rem); letter-spacing: .04em; color: var(--off); line-height: .88; position: relative; z-index: 1; margin-bottom: 1.2rem; }
 .hire-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(.9rem, 1.8vw, 1.4rem); color: rgba(240,235,227,.65); margin-bottom: 2.5rem; position: relative; z-index: 1; }
@@ -260,8 +289,6 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   "jobTitle": "Product Manager & AI Enthusiast",
   "description": "Quereinsteiger mit 18+ Jahren Kundenerfahrung, abgeschlossener Umschulung IT-Produktmanagement und nachweisbarer KI-Kompetenz. Offen für Remote-Rollen in Product Management, Customer Success und AI Strategy.",
   "url": "https://keven-ohlew.com/",
-  "email": "kevenohlew@googlemail.de",
-  "telephone": "+4915126640439",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Berlin",
@@ -269,17 +296,11 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   },
   "sameAs": [
     "https://linkedin.com/in/keven-ohlew",
-    "https://keoh030.github.io/Muse-"
+    "https://keoh030.github.io/Muse-/"
   ],
   "knowsAbout": [
-    "Product Management",
-    "AI Automation",
-    "Customer Success",
-    "n8n",
-    "Prompt Engineering",
-    "Scrum",
-    "Digital Transformation",
-    "UX Research"
+    "Product Management", "AI Automation", "Customer Success",
+    "n8n", "Prompt Engineering", "Scrum", "Digital Transformation", "UX Research"
   ],
   "hasCredential": [
     {
@@ -304,15 +325,6 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   "alumniOf": {
     "@type": "Organization",
     "name": "Franklin Institute of Sciences"
-  },
-  "seeks": {
-    "@type": "JobPosting",
-    "title": "Product Manager / Customer Success Manager / AI Strategist",
-    "jobLocationType": "TELECOMMUTE",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Open to opportunities"
-    }
   }
 }
 </script>
@@ -341,7 +353,10 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">KO<span>.</span></a>
-  <div class="nav-links">
+  <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
     <a href="#skills" class="nav-a">Skills</a>
     <a href="#projects" class="nav-a">Projekte</a>
     <a href="#chat" class="nav-a">Frag mich</a>
@@ -410,7 +425,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
         <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">Live deployed in 2 Wochen. 0€ Budget. Zeigt was möglich ist wenn man baut statt plant.</span></div>
       </div>
       <div class="proj-tags"><span class="proj-tag">AI · Prompt Engineering</span><span class="proj-tag">Brand Identity</span><span class="proj-tag">HTML/CSS/JS</span><span class="proj-tag">Live</span></div>
-      <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="proj-link">Live ansehen →</a>
+      <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="proj-link">Live ansehen →</a>
     </div>
     <div class="proj-card rv" style="transition-delay:.1s">
       <div class="proj-n">02 / 03</div>
@@ -612,7 +627,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   <div class="hire-btns">
     <a href="/cdn-cgi/l/email-protection#2d46485b4843424541485a6d4a42424a4148404c4441034948" class="btn-hire">E-Mail schreiben →</a>
     <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="btn-hire-o">LinkedIn →</a>
-    <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="btn-hire-o">Portfolio →</a>
+    <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="btn-hire-o">Portfolio →</a>
   </div>
 </section>
 
@@ -621,11 +636,11 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   <div class="f-logo">KO<span>.</span></div>
   <div class="f-links">
     <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="f-a">LinkedIn</a>
-    <a href="https://keoh030.github.io/Muse-" target="_blank" rel="noopener noreferrer" class="f-a">Portfolio</a>
+    <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="f-a">Portfolio</a>
     <a href="https://instagram.com/keoh030" target="_blank" rel="noopener noreferrer" class="f-a">@keoh030</a>
     <a href="/cdn-cgi/l/email-protection#3c57594a5952535450594b7c5b53535b5059515d5550125859" class="f-a">E-Mail</a>
   </div>
-  <div class="f-copy">© 2026 Keven Ohlew · Berlin</div>
+  <div class="f-copy">© 2026 Keven Ohlew · Berlin · <a href="/impressum.html" style="color:var(--mid);text-decoration:none;border-bottom:1px solid rgba(122,116,110,.25);transition:color .25s;" onmouseover="this.style.color='var(--off)'" onmouseout="this.style.color='var(--mid)'">Impressum & Datenschutz</a></div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -640,6 +655,10 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     mx = e.clientX; my = e.clientY;
     cur.style.left = mx + 'px';
     cur.style.top = my + 'px';
+    var el = document.elementFromPoint(mx, my);
+    var onRed = el && el.closest('#hire');
+    cur.classList.toggle('on-red', !!onRed);
+    curR.classList.toggle('on-red', !!onRed);
   });
   function tickCursor() {
     rx += (mx - rx) * 0.12;
@@ -761,7 +780,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
       return 'Keven sucht Remote-Rollen in: Product Manager, Customer Success Manager oder AI Strategist. Berlin/Hybrid auch möglich. Sofort verfügbar.';
     }
     if (t.indexOf('gehalt') !== -1 || t.indexOf('salary') !== -1 || t.indexOf('verdien') !== -1) {
-      return 'Gehaltsvorstellung: 48.000–58.000 EUR Fixum je nach Rolle und Paket. Bei Sales/CSM-Rollen mit Variable auch flexibel.';
+      return 'Kevens Gehaltsvorstellung teilt er gerne im persönlichen Gespräch mit — schreib ihm einfach über LinkedIn oder das Kontaktformular.';
     }
     if (t.indexOf('ingrow') !== -1 || t.indexOf('habit') !== -1 || t.indexOf('abschluss') !== -1 || t.indexOf('case') !== -1) {
       return 'InGrow ist Kevens Abschlussprojekt — vollständiger Double-Diamond: 5 Tiefeninterviews, Affinity Mapping, 3 Personas, MoSCoW, RICE, klickbarer Prototyp. Kern-Erkenntnis: Motivation ist ein emotionales Problem, kein Produktivitätsproblem.';
@@ -770,10 +789,10 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
       return 'Top Skills: n8n, Prompt Engineering, PSM I, Customer Journey Mapping, CRM, Figma. Zertifikate: PSM I, Digital Transformation Manager (IHK), AI for PM (Google), AI for Designers (IxDF).';
     }
     if (t.indexOf('projekt') !== -1 || t.indexOf('portfolio') !== -1 || t.indexOf('muse') !== -1) {
-      return 'Zwei starke Projekte: 1) The Digital Muse — AI-Brand-System, live: keoh030.github.io/Muse-  2) InGrow — vollständiger UX/PM-Prozess von Research bis Prototyp.';
+      return 'Zwei starke Projekte: 1) The Digital Muse — AI-Brand-System, live: keoh030.github.io/Muse-/  2) InGrow — vollständiger UX/PM-Prozess von Research bis Prototyp.';
     }
     if (t.indexOf('kontakt') !== -1 || t.indexOf('mail') !== -1 || t.indexOf('schreib') !== -1) {
-      return 'Direkt erreichbar: kevenohlew@googlemail.de, +49 151 26640439, linkedin.com/in/keven-ohlew';
+      return 'Direkt erreichbar über LinkedIn: linkedin.com/in/keven-ohlew — oder das Kontaktformular im Hire-Bereich.';
     }
     if (t.indexOf('verfügbar') !== -1 || t.indexOf('wann') !== -1 || t.indexOf('start') !== -1) {
       return 'Keven ist ab sofort verfügbar. Remote bevorzugt, Berlin/Hybrid auch möglich.';
@@ -784,7 +803,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     var fallbacks = [
       'Das weiß ich nicht genau — aber: Keven ist PSM I zertifiziert, hat n8n-Workflows gebaut die täglich laufen, und hat ein Produkt komplett von Research bis Prototyp entwickelt. Was willst du genauer wissen?',
       'Gute Frage! Was ich sagen kann: Keven kombiniert 18+ Jahre Erfahrung mit Menschen und Prozessen, echte KI-Projekte und 10+ Zertifikate. Frag mich nach Scrum, Roadmaps, Projekten oder Gehaltsvorstellung.',
-      'Da bin ich überfragt — frag Keven direkt: kevenohlew@googlemail.de. Aber vorher: Er beherrscht Roadmapping, User Research, Prompt Engineering und Automatisierung mit n8n. Eine seltene Kombination.',
+      'Da bin ich überfragt — schreib Keven direkt über LinkedIn oder das Kontaktformular. Aber vorher: Er beherrscht Roadmapping, User Research, Prompt Engineering und Automatisierung mit n8n. Eine seltene Kombination.',
       'Das weiß ich nicht — aber Keven baut statt zu planen: Digital Muse live in 2 Wochen, Job Automation täglich laufend, InGrow von Interview bis Prototyp. Was davon interessiert dich?',
     ];
     return fallbacks[Math.floor(Math.random() * fallbacks.length)];
@@ -812,6 +831,20 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     btn.addEventListener('click', function() {
       inEl.value = btn.getAttribute('data-q');
       sendMsg();
+    });
+  });
+
+  /* --- HAMBURGER --- */
+  var burger = document.getElementById('nav-burger');
+  var navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
     });
   });
 

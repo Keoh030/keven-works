@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digitale Feldnotizen über Aufstieg, Systeme, KI, Liebe und die Erschaffung eines selbstgebauten Lebens — von Keven Ohlew.">
+<title>Blog — Keven Ohlew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080807;
+  --off: #F0EBE3;
+  --rust: #C4341A;
+  --dim: #181715;
+  --mid: #7A746E;
+  --gold: #BFA27A;
+  --warm: #2A2826;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--off); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
+
+/* CURSOR */
+#cur, #cur-r { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; top: 0; left: 0; transform: translate(-50%,-50%); }
+#cur { width: 8px; height: 8px; background: var(--rust); transition: background .25s; }
+#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,7,.94); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.05); }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .15em; color: var(--off); text-decoration: none; }
+.logo span { color: var(--rust); }
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+.nav-a { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(240,235,227,.55); text-decoration: none; transition: color .25s; }
+.nav-a:hover, .nav-a.active { color: var(--off); }
+.nav-cta { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; background: var(--rust); color: var(--off); padding: .65rem 1.5rem; text-decoration: none; transition: background .25s; font-weight: 500; }
+.nav-cta:hover { background: #a02a14; }
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--off); transition: transform .3s, opacity .3s; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 680px) {
+  .nav-burger { display: flex; }
+  .nav-links { display: none; position: fixed; top: 57px; left: 0; right: 0; background: rgba(8,8,7,.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; gap: 0; padding: 1rem 0 1.5rem; border-bottom: 1px solid rgba(255,255,255,.07); z-index: 99; }
+  .nav-links.open { display: flex; }
+  .nav-a { font-size: .65rem; padding: .85rem 2rem; width: 100%; text-align: center; }
+  .nav-cta { margin-top: .5rem; padding: .75rem 2.5rem; font-size: .65rem; }
+}
+
+/* PAGE HEADER */
+.page-header {
+  padding: 10rem 3rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+.ph-eyebrow {
+  font-size: .5rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1rem;
+}
+.ph-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  letter-spacing: .03em;
+  line-height: .9;
+  color: var(--off);
+}
+.ph-title span { color: var(--rust); }
+.ph-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(.9rem, 1.5vw, 1.1rem);
+  color: var(--gold);
+  line-height: 1.6;
+  align-self: end;
+}
+@media (max-width: 680px) {
+  .page-header { grid-template-columns: 1fr; gap: 1.5rem; padding: 8rem 1.5rem 3rem; }
+}
+
+/* FILTER */
+.filter-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 3rem 3rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.filter-btn {
+  font-size: .5rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid rgba(255,255,255,.08);
+  background: none;
+  padding: .4rem 1rem;
+  cursor: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.filter-btn:hover { color: var(--off); border-color: rgba(255,255,255,.18); }
+.filter-btn.active { color: var(--off); border-color: var(--rust); background: rgba(196,52,26,.08); }
+@media (max-width: 680px) {
+  .filter-wrap { padding: 0 1.5rem 2rem; }
+}
+
+/* POST GRID */
+.post-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+@media (max-width: 680px) {
+  .post-grid { grid-template-columns: 1fr; padding: 1.5rem; }
+}
+
+/* POST CARD */
+.post-card {
+  background: var(--dim);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s;
+}
+.post-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--rust);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s;
+}
+.post-card:hover { background: rgba(196,52,26,.06); }
+.post-card:hover::before { transform: scaleX(1); }
+
+/* Featured (erster Post) */
+.post-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--warm);
+}
+.post-card.featured::before { background: var(--rust); }
+.post-card.featured:hover { background: rgba(196,52,26,.1); }
+.featured-left { display: flex; flex-direction: column; gap: .9rem; }
+.featured-right {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(240,235,227,.5);
+  border-left: 1px solid rgba(255,255,255,.08);
+  padding-left: 2rem;
+}
+@media (max-width: 680px) {
+  .post-card.featured { grid-template-columns: 1fr; }
+  .featured-right { display: none; }
+}
+
+.card-pill {
+  display: inline-block;
+  font-size: .46rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .28rem .75rem;
+  border: 1px solid;
+  width: fit-content;
+}
+.pill-aufstieg { color: var(--rust); border-color: rgba(196,52,26,.4); }
+.pill-maschine { color: #4a8fcb; border-color: rgba(74,143,203,.4); }
+.pill-zukunft  { color: #7a6ec9; border-color: rgba(122,110,201,.4); }
+.pill-muse     { color: var(--gold); border-color: rgba(191,162,122,.4); }
+.pill-liebe    { color: #4f9e6b; border-color: rgba(79,158,107,.4); }
+
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--off);
+  line-height: 1.25;
+}
+.post-card.featured .card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: .03em;
+  line-height: .95;
+}
+
+.card-teaser {
+  font-size: .76rem;
+  line-height: 1.75;
+  color: var(--mid);
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: auto;
+  padding-top: .5rem;
+}
+.card-date {
+  font-size: .5rem;
+  letter-spacing: .14em;
+  color: var(--mid);
+}
+.card-read {
+  font-size: .5rem;
+  letter-spacing: .14em;
+  color: var(--mid);
+}
+.card-read::before { content: '·'; margin-right: .8rem; }
+.card-arrow {
+  margin-left: auto;
+  font-size: .5rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+}
+.post-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
+
+/* EMPTY STATE */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem 2rem;
+  display: none;
+}
+.empty-state p {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--mid);
+}
+
+/* COUNT */
+.post-count {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 3rem 6rem;
+  font-size: .5rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+@media (max-width: 680px) {
+  .post-count { padding: 0 1.5rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<nav>
+  <a href="../index.html" class="logo">KE<span>O</span>H</a>
+  <div class="nav-links" id="nav-links">
+    <a href="../index.html" class="nav-a">Start</a>
+    <a href="index.html" class="nav-a active">Blog</a>
+    <a href="../index.html#skills" class="nav-a">Skills</a>
+    <a href="../index.html#projects" class="nav-a">Projekte</a>
+    <a href="mailto:kevenohlew@googlemail.com" class="nav-cta">Kontakt</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div>
+    <div class="ph-eyebrow">Digitale Feldnotizen</div>
+    <h1 class="ph-title">Vom Funk<span>—</span><br>tionieren<br>zum Er<span>—</span><br>schaffen</h1>
+  </div>
+  <p class="ph-sub">Aufstieg, Systeme, KI, Liebe und die Erschaffung eines selbstgebauten Lebens. Nicht perfekt. Nicht fertig. Aber ehrlich.</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-wrap">
+  <button class="filter-btn active" data-filter="alle">Alle</button>
+  <button class="filter-btn" data-filter="aufstieg">Aufstieg</button>
+  <button class="filter-btn" data-filter="maschine">Maschine</button>
+  <button class="filter-btn" data-filter="zukunft">Zukunft</button>
+  <button class="filter-btn" data-filter="muse">Muse</button>
+  <button class="filter-btn" data-filter="liebe">Liebe</button>
+</div>
+
+<!-- POST GRID -->
+<div class="post-grid" id="post-grid"></div>
+<div class="post-count" id="post-count"></div>
+
+<script>
+// ═══════════════════════════════
+// BLOG POSTS — hier neue Posts eintragen
+// ═══════════════════════════════
+const BLOG_POSTS = [
+  {
+    slug: 'manifest',
+    saeule: 'aufstieg',
+    titel: 'Vom Funktionieren zum Erschaffen',
+    teaser: 'Ich bin nicht hier, um nur zu funktionieren. Nicht, um jeden Tag abzuarbeiten. Nicht, um mich klein zu halten. Das hier ist mein Manifest.',
+    quote: 'Der Moment, in dem man aufhört, nur zu funktionieren — und anfängt, bewusst zu erschaffen.',
+    datum: '20. März 2026',
+    lesezeit: '5 min',
+    featured: true
+  },
+  {
+    slug: 'jobscan',
+    saeule: 'maschine',
+    titel: 'Systeme die funktionieren.',
+    teaser: 'Heute hat JOBSCAN zum ersten Mal funktioniert. Hinter diesem Satz stecken ein falscher API Key, ein Evaluation-Account und die Erkenntnis dass Bauen selten beim ersten Versuch klappt.',
+    quote: 'Nicht cool aussehen. Funktionieren.',
+    datum: '19. März 2026',
+    lesezeit: '4 min',
+    featured: false
+  }
+  // Nächster Post hier eintragen:
+];
+
+// ═══════════════════════════════
+// RENDER
+// ═══════════════════════════════
+const pillClass = {
+  aufstieg: 'pill-aufstieg',
+  maschine: 'pill-maschine',
+  zukunft:  'pill-zukunft',
+  muse:     'pill-muse',
+  liebe:    'pill-liebe'
+};
+const pillLabel = {
+  aufstieg: 'Aufstieg',
+  maschine: 'Maschine',
+  zukunft:  'Zukunft',
+  muse:     'Muse',
+  liebe:    'Liebe'
+};
+
+function renderPosts(filter) {
+  const grid = document.getElementById('post-grid');
+  const count = document.getElementById('post-count');
+  const filtered = filter === 'alle'
+    ? BLOG_POSTS
+    : BLOG_POSTS.filter(p => p.saeule === filter);
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state" style="display:block"><p>Noch keine Posts in dieser Kategorie.<br>Kommt bald.</p></div>`;
+    count.textContent = '';
+    return;
+  }
+
+  grid.innerHTML = filtered.map((p, i) => {
+    const isFeatured = p.featured && filter === 'alle' && i === 0;
+    if (isFeatured) {
+      return `
+        <a href="${p.slug}.html" class="post-card featured">
+          <div class="featured-left">
+            <span class="card-pill ${pillClass[p.saeule]}">${pillLabel[p.saeule]}</span>
+            <div class="card-title">${p.titel}</div>
+            <p class="card-teaser">${p.teaser}</p>
+            <div class="card-meta">
+              <span class="card-date">${p.datum}</span>
+              <span class="card-read">${p.lesezeit}</span>
+              <span class="card-arrow">Lesen →</span>
+            </div>
+          </div>
+          <div class="featured-right">"${p.quote || p.teaser}"</div>
+        </a>`;
+    }
+    return `
+      <a href="${p.slug}.html" class="post-card">
+        <span class="card-pill ${pillClass[p.saeule]}">${pillLabel[p.saeule]}</span>
+        <div class="card-title">${p.titel}</div>
+        <p class="card-teaser">${p.teaser}</p>
+        <div class="card-meta">
+          <span class="card-date">${p.datum}</span>
+          <span class="card-read">${p.lesezeit}</span>
+          <span class="card-arrow">Lesen →</span>
+        </div>
+      </a>`;
+  }).join('');
+
+  count.textContent = `${filtered.length} ${filtered.length === 1 ? 'Post' : 'Posts'}`;
+}
+
+// Filter-Buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderPosts(this.dataset.filter);
+  });
+});
+
+// Init
+renderPosts('alle');
+
+// Cursor
+const cur = document.getElementById('cur');
+const curR = document.getElementById('cur-r');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+  curR.style.left = e.clientX + 'px';
+  curR.style.top = e.clientY + 'px';
+});
+
+// Burger
+document.getElementById('burger').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

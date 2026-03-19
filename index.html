@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Keven Ohlew — Product Manager & AI Enthusiast aus Berlin. 18+ Jahre Kundenerfahrung, IT-Produktmanagement Umschulung, PSM I, KI-Projekte live deployed. Offen für Remote-Rollen in Product, Customer Success & AI Strategy.">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+<meta name="google-site-verification" content="1m9sFeWEc5em7VBmb5Xjr8TqGpYBA4olwC6zQkAr4u0" />
+<title>Keven Ohlew — Product Manager & AI Enthusiast | Berlin Remote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080807;
+  --off: #F0EBE3;
+  --rust: #C4341A;
+  --dim: #181715;
+  --mid: #7A746E;
+  --gold: #BFA27A;
+  --warm: #2A2826;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--off); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
+
+/* CURSOR */
+#cur, #cur-r { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; top: 0; left: 0; transform: translate(-50%,-50%); }
+#cur { width: 8px; height: 8px; background: var(--rust); transition: background .25s; }
+#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s, border-color .25s; }
+#cur.on-red { background: var(--off); }
+#cur-r.on-red { border-color: rgba(240,235,227,.5); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,7,.94); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.05); }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .15em; color: var(--off); text-decoration: none; }
+.logo span { color: var(--rust); }
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+.nav-a { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(240,235,227,.55); text-decoration: none; transition: color .25s; }
+.nav-a:hover { color: var(--off); }
+.nav-cta { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; background: var(--rust); color: var(--off); padding: .65rem 1.5rem; text-decoration: none; transition: background .25s; font-weight: 500; }
+.nav-cta:hover { background: #a02a14; }
+
+/* HAMBURGER */
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--off); transition: transform .3s, opacity .3s; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 680px) {
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(8,8,7,.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-a { font-size: .65rem; padding: .85rem 2rem; width: 100%; text-align: center; }
+  .nav-cta { margin-top: .5rem; padding: .75rem 2.5rem; font-size: .65rem; }
+}
+
+/* HERO */
+#hero { min-height: 100vh; padding: 8rem 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
+.hero-glow { position: absolute; top: 20%; right: 5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(196,52,26,.07) 0%, transparent 70%); pointer-events: none; }
+.avail { display: inline-flex; align-items: center; gap: .6rem; font-size: .55rem; letter-spacing: .22em; text-transform: uppercase; color: var(--mid); border: 1px solid rgba(255,255,255,.08); padding: .45rem .9rem; margin-bottom: 2rem; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #4caf50; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4.5rem, 9vw, 8.5rem); line-height: .92; letter-spacing: .03em; color: var(--off); margin-bottom: 1.2rem; }
+.hero-name .r { color: var(--rust); }
+.hero-role { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1rem, 2.2vw, 1.6rem); color: var(--gold); margin-bottom: 2rem; min-height: 2rem; transition: opacity .3s, transform .3s; }
+.hero-desc { font-size: .82rem; line-height: 1.85; color: rgba(240,235,227,.5); max-width: 420px; margin-bottom: 2.5rem; }
+.btns { display: flex; gap: 1rem; align-items: center; }
+.btn-p { background: var(--rust); color: var(--off); padding: .9rem 2.2rem; font-size: .62rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; transition: background .25s, transform .2s; display: inline-block; }
+.btn-p:hover { background: #a02a14; transform: translateY(-2px); }
+.btn-s { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(240,235,227,.45); text-decoration: none; border-bottom: 1px solid rgba(240,235,227,.18); padding-bottom: .15rem; transition: color .25s, border-color .25s; }
+.btn-s:hover { color: var(--off); border-color: var(--off); }
+.stats { display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-end; }
+.stat { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); padding: 1.4rem 1.8rem; width: 220px; transition: border-color .3s, transform .3s; }
+.stat:hover { border-color: rgba(196,52,26,.25); transform: translateX(-4px); }
+.stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--rust); line-height: 1; margin-bottom: .2rem; }
+.stat-l { font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+
+/* SECTIONS */
+.sec { padding: 7rem 3rem; }
+.sec-dark { background: var(--dim); }
+.sec-label { font-size: .5rem; letter-spacing: .32em; text-transform: uppercase; color: var(--rust); margin-bottom: .8rem; }
+.sec-title { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1.8rem, 3.5vw, 3rem); color: var(--off); line-height: 1.1; margin-bottom: 3.5rem; }
+.sec-title strong { font-style: normal; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--rust); letter-spacing: .04em; display: block; }
+
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.skill-card { background: var(--black); padding: 2.2rem 1.8rem; position: relative; overflow: hidden; transition: background .3s; }
+.skill-card:hover { background: rgba(196,52,26,.05); }
+.skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--rust); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.skill-card:hover::before { transform: scaleX(1); }
+.sk-icon { font-size: 1.3rem; margin-bottom: .8rem; }
+.sk-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: .07em; color: var(--off); margin-bottom: .6rem; }
+.sk-desc { font-size: .72rem; line-height: 1.75; color: var(--mid); margin-bottom: 1rem; }
+.sk-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+.sk-tag { font-size: .48rem; letter-spacing: .13em; text-transform: uppercase; color: var(--rust); border: 1px solid rgba(196,52,26,.28); padding: .25rem .6rem; }
+
+/* PROJECTS */
+.proj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.proj-card { background: var(--warm); padding: 2.5rem 2rem; transition: background .3s; }
+.proj-card:hover { background: rgba(196,52,26,.08); }
+.proj-n { font-size: .5rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rust); margin-bottom: 1.5rem; }
+.proj-title { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--off); margin-bottom: .7rem; line-height: 1.2; }
+.proj-desc { font-size: .74rem; line-height: 1.78; color: var(--mid); margin-bottom: 1.2rem; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.5rem; }
+.proj-tag { font-size: .48rem; letter-spacing: .1em; text-transform: uppercase; background: rgba(196,52,26,.1); color: var(--rust); padding: .25rem .7rem; }
+.proj-link { font-size: .56rem; letter-spacing: .14em; text-transform: uppercase; color: var(--off); text-decoration: none; border-bottom: 1px solid rgba(240,235,227,.18); padding-bottom: .15rem; transition: color .25s, border-color .25s; }
+.proj-link:hover { color: var(--rust); border-color: var(--rust); }
+
+/* INGROW */
+.ig-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.ig-quote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.2rem; color: var(--off); line-height: 1.55; margin-bottom: 1rem; }
+.ig-intro { font-size: .78rem; line-height: 1.8; color: var(--mid); }
+.ig-row { display: flex; flex-direction: column; gap: .7rem; }
+.ig-item { background: rgba(196,52,26,.07); border: 1px solid rgba(196,52,26,.18); padding: .85rem 1.1rem; display: flex; justify-content: space-between; align-items: center; }
+.ig-item-l { font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; color: var(--mid); }
+.ig-item-r { font-size: .74rem; color: var(--off); }
+.phases { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-bottom: 3rem; }
+.phase { background: var(--black); padding: 1.4rem; }
+.phase-l { font-family: 'Bebas Neue', sans-serif; font-size: .68rem; letter-spacing: .18em; margin-bottom: .5rem; }
+.phase-c { font-size: .7rem; line-height: 1.7; color: var(--mid); }
+.insight { border-left: 3px solid var(--rust); padding: 1.3rem 1.8rem; background: rgba(196,52,26,.05); margin-bottom: 3rem; }
+.insight-l { font-size: .52rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
+.insight-t { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.1rem; color: var(--off); line-height: 1.5; }
+.biz-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.biz-card { background: var(--black); padding: 1.4rem; text-align: center; }
+.biz-icon { font-size: 1.4rem; margin-bottom: .5rem; }
+.biz-title { font-family: 'Bebas Neue', sans-serif; font-size: .9rem; letter-spacing: .09em; color: var(--off); margin-bottom: .3rem; }
+.biz-desc { font-size: .65rem; color: var(--mid); }
+
+/* CHAT */
+.chat-wrap { max-width: 740px; margin: 0 auto; }
+.chat-box { background: var(--black); border: 1px solid rgba(255,255,255,.08); overflow: hidden; }
+.chat-head { background: rgba(196,52,26,.09); border-bottom: 1px solid rgba(196,52,26,.18); padding: .9rem 1.4rem; display: flex; align-items: center; gap: .7rem; }
+.chat-dot { width: 7px; height: 7px; border-radius: 50%; background: #4caf50; animation: blink 2s infinite; }
+.chat-title { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--off); }
+.chat-sub { font-size: .52rem; color: var(--mid); margin-left: auto; }
+.chat-msgs { padding: 1.2rem; min-height: 240px; max-height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: .9rem; }
+.chat-msgs::-webkit-scrollbar { width: 3px; }
+.chat-msgs::-webkit-scrollbar-thumb { background: var(--warm); }
+.msg { display: flex; gap: .7rem; align-items: flex-start; }
+.msg.u { flex-direction: row-reverse; }
+.av { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .55rem; font-weight: 500; background: var(--warm); color: var(--mid); border: 1px solid rgba(255,255,255,.07); }
+.msg.u .av { background: rgba(196,52,26,.18); color: var(--rust); }
+.bub { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); padding: .7rem .95rem; font-size: .76rem; line-height: 1.65; color: var(--off); max-width: 78%; }
+.msg.u .bub { background: rgba(196,52,26,.09); border-color: rgba(196,52,26,.18); }
+.typing { display: flex; gap: .28rem; padding: .7rem .95rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); }
+.td { width: 5px; height: 5px; border-radius: 50%; background: var(--mid); animation: tdot .8s infinite; }
+.td:nth-child(2) { animation-delay: .14s; }
+.td:nth-child(3) { animation-delay: .28s; }
+@keyframes tdot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+.chat-sugg { padding: .7rem 1.2rem; display: flex; flex-wrap: wrap; gap: .4rem; background: rgba(255,255,255,.02); border-top: 1px solid rgba(255,255,255,.05); }
+.sq { font-size: .53rem; letter-spacing: .09em; color: var(--mid); border: 1px solid rgba(255,255,255,.08); background: none; padding: .35rem .8rem; cursor: none; font-family: 'DM Sans', sans-serif; transition: color .25s, border-color .25s; }
+.sq:hover { color: var(--off); border-color: rgba(196,52,26,.35); }
+.chat-input-row { display: flex; border-top: 1px solid rgba(255,255,255,.07); }
+#chat-in { flex: 1; background: none; border: none; outline: none; padding: .9rem 1.2rem; font-size: .76rem; color: var(--off); font-family: 'DM Sans', sans-serif; cursor: none; }
+#chat-in::placeholder { color: var(--mid); }
+#chat-go { background: var(--rust); border: none; cursor: none; padding: 0 1.3rem; color: var(--off); font-size: .57rem; letter-spacing: .14em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: background .25s; }
+#chat-go:hover { background: #a02a14; }
+
+/* TIMELINE / ZERTIFIKATE */
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3.5rem; }
+.cert-card { background: var(--dim); border: 1px solid rgba(255,255,255,.05); padding: 1.6rem 1.4rem; position: relative; overflow: hidden; transition: background .3s, border-color .3s; }
+.cert-card:hover { background: rgba(196,52,26,.06); border-color: rgba(196,52,26,.25); }
+.cert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--rust); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.cert-card:hover::before { transform: scaleX(1); }
+.cert-card.highlight { border-color: rgba(196,52,26,.2); }
+.cert-period { font-size: .48rem; letter-spacing: .22em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
+.cert-title { font-family: 'DM Serif Display', serif; font-size: .95rem; color: var(--off); margin-bottom: .35rem; line-height: 1.3; }
+.cert-org { font-size: .65rem; color: var(--mid); margin-bottom: .6rem; }
+.cert-badge { display: inline-block; font-size: .44rem; letter-spacing: .14em; text-transform: uppercase; background: rgba(196,52,26,.12); color: var(--rust); border: 1px solid rgba(196,52,26,.25); padding: .2rem .55rem; }
+.cert-badge.top { background: rgba(191,162,122,.1); color: var(--gold); border-color: rgba(191,162,122,.25); }
+.cert-coming { opacity: .5; border-style: dashed; }
+
+/* HIRE */
+#hire { padding: 6rem 3rem; background: var(--rust); text-align: center; position: relative; overflow: hidden; }
+#hire::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255,255,255,.04) 0%, transparent 70%); }
+.hire-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 14vw, 11rem); letter-spacing: .04em; color: var(--off); line-height: .88; position: relative; z-index: 1; margin-bottom: 1.2rem; }
+.hire-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(.9rem, 1.8vw, 1.4rem); color: rgba(240,235,227,.65); margin-bottom: 2.5rem; position: relative; z-index: 1; }
+.hire-btns { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+.btn-hire { background: var(--black); color: var(--off); padding: 1rem 2.4rem; text-decoration: none; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: background .25s, transform .2s; display: inline-block; }
+.btn-hire:hover { background: #1a1a18; transform: translateY(-2px); }
+.btn-hire-o { background: transparent; color: var(--off); border: 1px solid rgba(240,235,227,.35); padding: 1rem 2.4rem; text-decoration: none; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: border-color .25s, transform .2s; display: inline-block; }
+.btn-hire-o:hover { border-color: var(--off); transform: translateY(-2px); }
+
+/* FOOTER */
+footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.06); }
+.f-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: .14em; color: var(--off); }
+.f-logo span { color: var(--rust); }
+.f-links { display: flex; gap: 1.8rem; }
+.f-a { font-size: .53rem; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .25s; }
+.f-a:hover { color: var(--off); }
+.f-copy { font-size: .52rem; color: var(--mid); }
+
+/* REVEAL */
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+.rv.on { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+  .stats { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .stat { width: 160px; }
+  .skills-grid, .proj-grid, .phases, .biz-grid { grid-template-columns: 1fr; }
+  .ig-meta { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr 1fr; }
+  nav { padding: 1.1rem 1.5rem; }
+  .nav-links { gap: 1rem; }
+  .sec, #hire { padding: 5rem 1.5rem; }
+}
+@media (max-width: 520px) {
+  .cert-grid { grid-template-columns: 1fr; }
+
+  /* InGrow meta-item: Label über Inhalt statt nebeneinander */
+  .ig-item { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .ig-item-r { font-size: .72rem; }
+
+  /* Footer: untereinander statt nebeneinander */
+  footer { flex-direction: column; align-items: flex-start; gap: 1.2rem; padding: 2rem 1.5rem; }
+  .f-links { flex-wrap: wrap; gap: 1.2rem; }
+  .f-copy { font-size: .5rem; line-height: 1.6; }
+}
+
+/* PROJECT PSI (Problem / Solution / Impact) */
+.proj-psi { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1.2rem; }
+.psi-block { display: flex; flex-direction: column; gap: .15rem; padding: .5rem .7rem; background: rgba(255,255,255,.03); border-left: 2px solid rgba(196,52,26,.35); }
+.psi-label { font-size: .46rem; letter-spacing: .22em; text-transform: uppercase; color: var(--rust); font-weight: 500; display: block; margin-bottom: .1rem; }
+.psi-text { font-size: .72rem; line-height: 1.6; color: var(--mid); }
+
+/* ANIMATED BAR ICONS */
+.sk-icon, .biz-icon { margin-bottom: 1rem; }
+.bar-icon { display: flex; flex-direction: column; gap: 4px; width: 36px; margin-bottom: 1rem; }
+.bar-icon .b { height: 3px; background: var(--rust); transform-origin: left; opacity: 0; transform: scaleX(0); transition: none; }
+.bar-icon .b:nth-child(1) { width: 100%; }
+.bar-icon .b:nth-child(2) { width: 65%; }
+.bar-icon .b:nth-child(3) { width: 40%; }
+.skill-card.on .bar-icon .b { animation: barload 1.2s ease forwards; }
+.skill-card.on .bar-icon .b:nth-child(1) { animation-delay: .1s; }
+.skill-card.on .bar-icon .b:nth-child(2) { animation-delay: .25s; }
+.skill-card.on .bar-icon .b:nth-child(3) { animation-delay: .4s; }
+@keyframes barload { 0%{opacity:0;transform:scaleX(0)} 100%{opacity:1;transform:scaleX(1)} }
+
+/* BIZ ICON — single accent line */
+.line-icon { width: 28px; height: 2px; background: var(--rust); margin-bottom: 1rem; position: relative; }
+.line-icon::after { content:''; position:absolute; top: 6px; left: 0; width: 16px; height: 2px; background: rgba(196,52,26,.4); }
+
+/* STAT NUM override — no change needed */
+
+</style>
+
+<!-- ═══ SEO & SOCIAL ═══ -->
+
+<!-- Primary Meta -->
+<meta name="author" content="Keven Ohlew">
+<meta name="keywords" content="Keven Ohlew, keoh030, Product Manager Berlin, AI Consultant, Customer Success Manager, KI Automation, n8n Automatisierung, Prompt Engineering, IT Produktmanagement, Remote Jobs Berlin, Quereinsteiger KI, Digital Transformation, Scrum PSM, Hire Me, Berlin Fotograf, Architecture Photography Berlin, The Digital Muse">
+<meta name="robots" content="index, follow">
+<meta name="language" content="de">
+<link rel="canonical" href="https://keven-ohlew.com/">
+
+<!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Keven Ohlew — Product Manager & AI Enthusiast">
+<meta property="og:description" content="18+ Jahre Kundenerfahrung. 8+ KI-Zertifikate. Projekte live gebaut. Ich suche Remote-Rollen in Product Management, Customer Success oder AI Strategy.">
+<meta property="og:url" content="https://keven-ohlew.com/">
+<meta property="og:site_name" content="Keven Ohlew Portfolio">
+<meta property="og:locale" content="de_DE">
+<meta property="profile:first_name" content="Keven">
+<meta property="profile:last_name" content="Ohlew">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keven Ohlew — Product Manager & AI Enthusiast">
+<meta name="twitter:description" content="18+ Jahre Kundenerfahrung. 8+ KI-Zertifikate. Offen für Remote-Rollen in Product, Customer Success & AI Strategy.">
+
+<!-- Schema.org Person — das lesen Google & Perplexity direkt -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Keven Ohlew",
+  "givenName": "Keven",
+  "familyName": "Ohlew",
+  "jobTitle": "Product Manager & AI Enthusiast",
+  "description": "Quereinsteiger mit 18+ Jahren Kundenerfahrung, abgeschlossener Umschulung IT-Produktmanagement und nachweisbarer KI-Kompetenz. Offen für Remote-Rollen in Product Management, Customer Success und AI Strategy.",
+  "url": "https://keven-ohlew.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/keven-ohlew",
+    "https://keoh030.github.io/Muse-/"
+  ],
+  "knowsAbout": [
+    "Product Management", "AI Automation", "Customer Success",
+    "n8n", "Prompt Engineering", "Scrum", "Digital Transformation", "UX Research"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Professional Scrum Master I (PSM I)",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Scrum.org" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Digital Transformation Manager",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "IHK München" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "AI for Product Management",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Google Cloud" }
+    }
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Franklin Institute of Sciences"
+  }
+}
+</script>
+
+<!-- Schema.org WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Keven Ohlew — Portfolio & Hire Me",
+  "url": "https://keven-ohlew.com/",
+  "description": "Portfolio und Hire-Me Seite von Keven Ohlew — Product Manager, AI Enthusiast und Creative Technologist aus Berlin.",
+  "author": {
+    "@type": "Person",
+    "name": "Keven Ohlew"
+  }
+}
+</script>
+<!-- ═══════════════════════════════════════ -->
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">KO<span>.</span></a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#skills" class="nav-a">Skills</a>
+    <a href="#projects" class="nav-a">Projekte</a>
+    <a href="#chat" class="nav-a">Frag mich</a>
+    <a href="#timeline" class="nav-a">Timeline</a>
+    <a href="blog/index.html" class="nav-a">Blog</a>
+    <a href="#hire" class="nav-cta">Hire me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div>
+    <div class="avail rv"><div class="dot"></div>Sofort verfügbar · Remote · Berlin</div>
+    <h1 class="hero-name rv">KEVEN<br><span class="r">OHLEW</span></h1>
+    <div class="hero-role rv" id="role-txt">Product Manager</div>
+    <p class="hero-desc rv">Ich baue Produkte und KI-Workflows die Prozesse messbar schneller machen — echte Automatisierungen, echte Deployments, echte Ergebnisse. Als kreativer Technologe mit Hintergrund in Fotografie &amp; Film bringe ich eine Perspektive mit, die man nicht studieren kann. Verfügbar ab sofort.</p>
+    <div class="btns rv">
+      <a href="#hire" class="btn-p">Hire me →</a>
+      <a href="#projects" class="btn-s">Projekte ansehen</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat rv"><div class="stat-n">18+</div><div class="stat-l">Jahre Kundenerfahrung</div></div>
+    <div class="stat rv" style="transition-delay:.12s"><div class="stat-n">12+</div><div class="stat-l">Zertifikate 2025/26</div></div>
+    <div class="stat rv" style="transition-delay:.24s"><div class="stat-n">2 Wo.</div><div class="stat-l">Von Idee zu Live-Deployment</div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="sec sec-dark">
+  <p class="sec-label rv">§ 01 — Was ich mitbringe</p>
+  <h2 class="sec-title rv">Drei Skills.<br><strong>Eine seltene Kombination.</strong></h2>
+  <div class="skills-grid">
+    <div class="skill-card rv">
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
+      <div class="sk-title">Product &amp; Strategy</div>
+      <p class="sk-desc">Roadmapping, User Research, Customer Journey Mapping, Agile Frameworks. Ich denke in Systemen — nicht in Einzelaufgaben.</p>
+      <div class="sk-tags"><span class="sk-tag">Scrum PSM I</span><span class="sk-tag">Kanban</span><span class="sk-tag">OKRs</span><span class="sk-tag">RICE</span><span class="sk-tag">MoSCoW</span></div>
+    </div>
+    <div class="skill-card rv" style="transition-delay:.1s">
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
+      <div class="sk-title">AI &amp; Automation</div>
+      <p class="sk-desc">Ich baue echte AI-Workflows — nicht nur Prompts. n8n, Claude API, Automatisierungen die für mich arbeiten während ich schlafe.</p>
+      <div class="sk-tags"><span class="sk-tag">n8n</span><span class="sk-tag">Claude</span><span class="sk-tag">Prompt Eng.</span><span class="sk-tag">ChatGPT</span><span class="sk-tag">Higgsfield</span></div>
+    </div>
+    <div class="skill-card rv" style="transition-delay:.2s">
+      <div class="bar-icon"><div class="b"></div><div class="b"></div><div class="b"></div></div>
+      <div class="sk-title">Customer Success</div>
+      <p class="sk-desc">18+ Jahre im direkten Kundenkontakt — Einzelhandel, Service, Eventmanagement. Menschen begeistern, Probleme lösen, Vertrauen aufbauen. Diese Erfahrung macht mich zu einem PM der seinen Nutzer wirklich versteht.</p>
+      <div class="sk-tags"><span class="sk-tag">CRM</span><span class="sk-tag">Onboarding</span><span class="sk-tag">Churn Prevention</span><span class="sk-tag">Stakeholder</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="sec">
+  <p class="sec-label rv">§ 02 — Projekte</p>
+  <h2 class="sec-title rv">Gebaut, nicht<br><strong>geredet.</strong></h2>
+  <div class="proj-grid">
+    <div class="proj-card rv">
+      <div class="proj-n">01 / 03</div>
+      <div class="proj-title">The Digital Muse</div>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Kein Budget, keine Agentur — trotzdem professionelle Online-Präsenz aufbauen.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">Vollständiges AI-Brand-System: Prompt Engineering, Brand Identity, Portfolio-Website — allein gebaut.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">Live deployed in 2 Wochen. 0€ Budget. Zeigt was möglich ist wenn man baut statt plant.</span></div>
+      </div>
+      <div class="proj-tags"><span class="proj-tag">AI · Prompt Engineering</span><span class="proj-tag">Brand Identity</span><span class="proj-tag">HTML/CSS/JS</span><span class="proj-tag">Live</span></div>
+      <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="proj-link">Live ansehen →</a>
+    </div>
+    <div class="proj-card rv" style="transition-delay:.1s">
+      <div class="proj-n">02 / 03</div>
+      <div class="proj-title">InGrow — Habit App</div>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Habit-Apps verlieren Nutzer weil sie auf Disziplin setzen — nicht auf Motivation.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">5 Tiefeninterviews, 3 Personas, MoSCoW-Priorisierung, User Story Map → klickbarer Prototyp.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">Validiertes Konzept: Beziehung als Retention-Treiber schlägt Gamification in allen Nutzer-Tests.</span></div>
+      </div>
+      <div class="proj-tags"><span class="proj-tag">UX Research</span><span class="proj-tag">Product Strategy</span><span class="proj-tag">Prototyping</span><span class="proj-tag">Case Study</span></div>
+      <a href="#ingrow" class="proj-link">Case Study →</a>
+    </div>
+    <div class="proj-card rv" style="transition-delay:.2s">
+      <div class="proj-n">03 / 03</div>
+      <div class="proj-title">Job Automation</div>
+      <div class="proj-psi">
+        <div class="psi-block"><span class="psi-label">Problem</span><span class="psi-text">Bewerbungsprozesse sind ineffizient — täglich dieselben manuellen Schritte für jeden Job.</span></div>
+        <div class="psi-block"><span class="psi-label">Solution</span><span class="psi-text">n8n-Workflow: automatische Stellensuche, KI-gestützte CV-Anpassung, Firmenrecherche in einem Durchlauf.</span></div>
+        <div class="psi-block"><span class="psi-label">Impact</span><span class="psi-text">V2 in Entwicklung: No-Code App die das gleiche Problem für andere Firmen löst. Live auf LinkedIn dokumentiert.</span></div>
+      </div>
+      <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">AI Research</span><span class="proj-tag">No-Code</span><span class="proj-tag">In Progress</span></div>
+      <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="proj-link">Follow live →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INGROW CASE STUDY -->
+<section id="ingrow" class="sec sec-dark">
+  <p class="sec-label rv">§ 02b — Abschlussprojekt</p>
+  <h2 class="sec-title rv">InGrow.<br><strong>Case Study.</strong></h2>
+  <div style="max-width:860px;margin:0 auto">
+    <div class="ig-meta rv">
+      <div>
+        <p class="ig-quote">„Wie kann eine digitale Begleitung Motivation ohne Druck ermöglichen?"</p>
+        <p class="ig-intro">Vollständiger Double-Diamond-Prozess — von qualitativer Nutzerforschung bis zum validierbaren Prototyp. Abschlussprojekt der Umschulung IT-Produktmanagement am Franklin Institute.</p>
+      </div>
+      <div class="ig-row">
+        <div class="ig-item"><span class="ig-item-l">Typ</span><span class="ig-item-r">UX · Product Strategy</span></div>
+        <div class="ig-item"><span class="ig-item-l">Methoden</span><span class="ig-item-r">Interviews · Personas · MoSCoW · RICE</span></div>
+        <div class="ig-item"><span class="ig-item-l">Ergebnis</span><span class="ig-item-r">Klickbarer Prototyp · Validierungsplan</span></div>
+        <div class="ig-item"><span class="ig-item-l">Tools</span><span class="ig-item-r">Figma · Miro · Affinity Map</span></div>
+      </div>
+    </div>
+    <div class="phases rv">
+      <div class="phase" style="border-top:3px solid var(--rust)"><div class="phase-l" style="color:var(--rust)">DISCOVER</div><div class="phase-c">5 Tiefeninterviews<br>Affinity Mapping<br>Empathy Maps<br>3 Personas</div></div>
+      <div class="phase" style="border-top:3px solid var(--gold)"><div class="phase-l" style="color:var(--gold)">DEFINE</div><div class="phase-c">HMW-Statements<br>Value Proposition<br>Produktvision<br>5 Prinzipien</div></div>
+      <div class="phase" style="border-top:3px solid rgba(240,235,227,.25)"><div class="phase-l" style="color:var(--off)">DEVELOP</div><div class="phase-c">MVP Canvas<br>MoSCoW · RICE<br>User Story Map<br>Wireframes</div></div>
+      <div class="phase" style="border-top:3px solid rgba(196,52,26,.4)"><div class="phase-l" style="color:var(--mid)">DELIVER</div><div class="phase-c">Klickbarer Prototyp<br>Usability-Tests<br>Validierungsplan<br>KPI-Framework</div></div>
+    </div>
+    <div class="insight rv">
+      <div class="insight-l">Kern-Erkenntnis</div>
+      <div class="insight-t">„Motivation ist ein emotionales Problem — kein Produktivitätsproblem. Beziehung ist ein stärkerer Treiber als Gamification."</div>
+    </div>
+    <div class="biz-grid rv">
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">Freemium</div><div class="biz-desc">Premium-Erweiterungen für Kernnutzer</div></div>
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">B2B2C</div><div class="biz-desc">Krankenkassen · Prävention · Mental Health</div></div>
+      <div class="biz-card"><div class="line-icon"></div><div class="biz-title">Brand Asset</div><div class="biz-desc">Maskottchen als langfristiges Brand-IP</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<section id="chat" class="sec">
+  <div class="chat-wrap">
+    <p class="sec-label rv" style="text-align:center">§ 03 — Frag mich alles</p>
+    <h2 class="sec-title rv" style="text-align:center;margin-bottom:1.5rem">Smart Assistant.<br><strong>Ich antworte.</strong></h2>
+    <p class="rv" style="text-align:center;font-size:.78rem;color:var(--mid);margin-bottom:2rem">Stell Fragen über Kevens Erfahrung, Projekte oder Gehaltsvorstellung.</p>
+    <div class="chat-box rv">
+      <div class="chat-head">
+        <div class="chat-dot"></div>
+        <span class="chat-title">Keven — Assistant</span>
+        <span class="chat-sub">Antwortet sofort</span>
+      </div>
+      <div class="chat-msgs" id="chat-msgs">
+        <div class="msg">
+          <div class="av">KO</div>
+          <div class="bub">Hi! Frag mich alles über Keven — Erfahrung, Projekte, Gehaltsvorstellung oder warum er der richtige für deine Rolle ist.</div>
+        </div>
+      </div>
+      <div class="chat-sugg">
+        <button class="sq" data-q="Was macht Keven besonders?">Was macht Keven besonders?</button>
+        <button class="sq" data-q="Welche Rollen passen zu ihm?">Welche Rollen passen?</button>
+        <button class="sq" data-q="Was sind seine Gehaltsvorstellungen?">Gehaltsvorstellung?</button>
+        <button class="sq" data-q="Erzähl mir über InGrow">InGrow Projekt</button>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-in" placeholder="Stell eine Frage über Keven..." maxlength="280" autocomplete="off">
+        <button id="chat-go">Senden</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZERTIFIKATE -->
+<section id="timeline" class="sec sec-dark">
+  <p class="sec-label rv">§ 04 — Mein Weg</p>
+  <h2 class="sec-title rv">12+ Zertifikate.<br><strong>Alle 2025/26.</strong></h2>
+  <div class="cert-grid">
+
+    <div class="cert-card highlight rv">
+      <div class="cert-period">Nov 2025</div>
+      <div class="cert-title">Professional Scrum Master I</div>
+      <div class="cert-org">Scrum.org</div>
+      <span class="cert-badge">PSM I</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.05s">
+      <div class="cert-period">Feb 2026</div>
+      <div class="cert-title">Digital Transformation Manager</div>
+      <div class="cert-org">IHK München</div>
+      <span class="cert-badge">IHK</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.1s">
+      <div class="cert-period">Okt 2025</div>
+      <div class="cert-title">Design Thinking</div>
+      <div class="cert-org">Forward Education · Franklin Institute</div>
+      <span class="cert-badge top">Top 10%</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.15s">
+      <div class="cert-period">2025</div>
+      <div class="cert-title">Applied IT-Consulting</div>
+      <div class="cert-org">Pioneer People · Franklin Institute</div>
+      <span class="cert-badge">Certified</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.2s">
+      <div class="cert-period">Jun 2025</div>
+      <div class="cert-title">AI for Designers</div>
+      <div class="cert-org">IxDF · Interaction Design Foundation</div>
+      <span class="cert-badge top">Top 10%</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.25s">
+      <div class="cert-period">2025</div>
+      <div class="cert-title">AI for Product Management</div>
+      <div class="cert-org">Google Cloud · Pendo · Mind the Product</div>
+      <span class="cert-badge">Completed</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.3s">
+      <div class="cert-period">Jun 2025</div>
+      <div class="cert-title">User Research – Methods &amp; Best Practices</div>
+      <div class="cert-org">IxDF · Interaction Design Foundation</div>
+      <span class="cert-badge top">Top 10%</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.35s">
+      <div class="cert-period">Jul 2025</div>
+      <div class="cert-title">Service Design: Integrated Service Experiences</div>
+      <div class="cert-org">IxDF · Interaction Design Foundation</div>
+      <span class="cert-badge top">Top 10%</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.4s">
+      <div class="cert-period">Aug 2025</div>
+      <div class="cert-title">Creativity: Methods to Design Better Products</div>
+      <div class="cert-org">IxDF · Interaction Design Foundation</div>
+      <span class="cert-badge top">Top 10%</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.45s">
+      <div class="cert-period">Jul 2025</div>
+      <div class="cert-title">Miro for Product Owners &amp; Scrum Masters</div>
+      <div class="cert-org">Udemy · Alan Slater</div>
+      <span class="cert-badge">Completed</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.5s">
+      <div class="cert-period">2025</div>
+      <div class="cert-title">Product Analytics Certified</div>
+      <div class="cert-org">Pendo · Mind the Product</div>
+      <span class="cert-badge">Certified</span>
+    </div>
+
+    <div class="cert-card rv" style="transition-delay:.55s">
+      <div class="cert-period">2025</div>
+      <div class="cert-title">Super Certified</div>
+      <div class="cert-org">Pendo · Mind the Product</div>
+      <span class="cert-badge top">Super</span>
+    </div>
+
+    <div class="cert-card cert-coming rv" style="transition-delay:.6s">
+      <div class="cert-period">Mär 2026 — In Kürze</div>
+      <div class="cert-title">Business Model Innovation</div>
+      <div class="cert-org">Stanford Online · Prof. Haim Mendelson</div>
+      <span class="cert-badge">In Progress</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- BLOG TEASER -->
+<section class="sec" id="blog">
+  <p class="sec-label rv">§ 05b — Feldnotizen</p>
+  <h2 class="sec-title rv">Vom Funktionieren<br><strong>zum Erschaffen.</strong></h2>
+  <div style="max-width:860px;margin:0 auto">
+    <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2.5rem">
+      <a href="blog/manifest.html" style="display:block;background:var(--warm);padding:2.2rem;text-decoration:none;transition:background .3s;position:relative;overflow:hidden" onmouseover="this.style.background='rgba(196,52,26,.08)'" onmouseout="this.style.background='var(--warm)'">
+        <div style="font-size:.46rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(196,52,26,.35);padding:.28rem .75rem;display:inline-block;margin-bottom:1.2rem">Aufstieg</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--off);margin-bottom:.8rem;line-height:1.25">Vom Funktionieren zum Erschaffen</div>
+        <p style="font-size:.75rem;line-height:1.75;color:var(--mid);margin-bottom:1.5rem">Ich bin nicht hier, um nur zu funktionieren. Das hier ist mein Manifest — über Aufstieg, Systeme und die Erschaffung eines selbstgebauten Lebens.</p>
+        <div style="font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)">Lesen →</div>
+      </a>
+      <div style="background:var(--dim);padding:2.2rem;display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:1.1rem;color:rgba(240,235,227,.5);line-height:1.7;margin-bottom:2rem">"Der Moment, in dem man aufhört, nur zu funktionieren — und anfängt, bewusst zu erschaffen."</div>
+          <div style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:.4rem">Themen im Blog</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+            <span style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(196,52,26,.3);padding:.25rem .7rem">Aufstieg</span>
+            <span style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:#4a8fcb;border:1px solid rgba(74,143,203,.3);padding:.25rem .7rem">Maschine</span>
+            <span style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:#7a6ec9;border:1px solid rgba(122,110,201,.3);padding:.25rem .7rem">Zukunft</span>
+            <span style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(191,162,122,.3);padding:.25rem .7rem">Muse</span>
+            <span style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:#4f9e6b;border:1px solid rgba(79,158,107,.3);padding:.25rem .7rem">Liebe</span>
+          </div>
+        </div>
+        <a href="blog/index.html" style="display:inline-block;margin-top:2rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--off);text-decoration:none;border-bottom:1px solid rgba(240,235,227,.2);padding-bottom:.15rem;transition:color .25s,border-color .25s" onmouseover="this.style.color='var(--rust)';this.style.borderColor='var(--rust)'" onmouseout="this.style.color='var(--off)';this.style.borderColor='rgba(240,235,227,.2)'">Alle Posts ansehen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIRE -->
+<section id="hire">
+  <p class="sec-label" style="color:rgba(240,235,227,.55);text-align:center;position:relative;z-index:1">§ 05 — Let's work</p>
+  <div class="hire-title">HIRE<br>ME.</div>
+  <p class="hire-sub">Remote · Sofort verfügbar · Product · AI Strategy · Customer Success</p>
+  <div class="hire-btns">
+    <a href="/cdn-cgi/l/email-protection#2d46485b4843424541485a6d4a42424a4148404c4441034948" class="btn-hire">E-Mail schreiben →</a>
+    <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="btn-hire-o">LinkedIn →</a>
+    <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="btn-hire-o">Portfolio →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">KO<span>.</span></div>
+  <div class="f-links">
+    <a href="blog/index.html" class="f-a">Blog</a>
+    <a href="https://linkedin.com/in/keven-ohlew" target="_blank" rel="noopener noreferrer" class="f-a">LinkedIn</a>
+    <a href="https://keoh030.github.io/Muse-/" target="_blank" rel="noopener noreferrer" class="f-a">Portfolio</a>
+    <a href="https://instagram.com/keoh030" target="_blank" rel="noopener noreferrer" class="f-a">@keoh030</a>
+    <a href="/cdn-cgi/l/email-protection#3c57594a5952535450594b7c5b53535b5059515d5550125859" class="f-a">E-Mail</a>
+  </div>
+  <div class="f-copy">© 2026 Keven Ohlew · Berlin · <a href="/impressum.html" style="color:var(--mid);text-decoration:none;border-bottom:1px solid rgba(122,116,110,.25);transition:color .25s;" onmouseover="this.style.color='var(--off)'" onmouseout="this.style.color='var(--mid)'">Impressum & Datenschutz</a></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function() {
+  'use strict';
+
+  /* --- CURSOR --- */
+  var cur = document.getElementById('cur');
+  var curR = document.getElementById('cur-r');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', function(e) {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px';
+    cur.style.top = my + 'px';
+    var el = document.elementFromPoint(mx, my);
+    var onRed = el && el.closest('#hire');
+    cur.classList.toggle('on-red', !!onRed);
+    curR.classList.toggle('on-red', !!onRed);
+  });
+  function tickCursor() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    curR.style.left = rx + 'px';
+    curR.style.top = ry + 'px';
+    requestAnimationFrame(tickCursor);
+  }
+  tickCursor();
+
+  /* --- ROLES --- */
+  var roles = ['Product Manager', 'AI Enthusiast', 'Creative Technologist', 'Customer Success'];
+  var ri = 0;
+  var roleEl = document.getElementById('role-txt');
+  setInterval(function() {
+    roleEl.style.opacity = '0';
+    roleEl.style.transform = 'translateY(8px)';
+    setTimeout(function() {
+      ri = (ri + 1) % roles.length;
+      roleEl.textContent = roles[ri];
+      roleEl.style.opacity = '1';
+      roleEl.style.transform = 'translateY(0)';
+    }, 300);
+  }, 2600);
+
+  /* --- SCROLL REVEAL --- */
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(function(el) {
+    obs.observe(el);
+  });
+
+  /* --- CHATBOT --- */
+  var msgsEl = document.getElementById('chat-msgs');
+  var inEl = document.getElementById('chat-in');
+  var sendBtn = document.getElementById('chat-go');
+
+  function sanitize(str) {
+    var tmp = document.createElement('div');
+    tmp.textContent = String(str);
+    return tmp.textContent;
+  }
+
+  function addMsg(text, isUser) {
+    var wrap = document.createElement('div');
+    wrap.className = 'msg' + (isUser ? ' u' : '');
+    var av = document.createElement('div');
+    av.className = 'av';
+    av.textContent = isUser ? 'Du' : 'KO';
+    var bub = document.createElement('div');
+    bub.className = 'bub';
+    bub.textContent = sanitize(text);
+    wrap.appendChild(av);
+    wrap.appendChild(bub);
+    msgsEl.appendChild(wrap);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+  }
+
+  function showTyping() {
+    var wrap = document.createElement('div');
+    wrap.className = 'msg';
+    wrap.id = 'typ';
+    var av = document.createElement('div');
+    av.className = 'av';
+    av.textContent = 'KO';
+    var t = document.createElement('div');
+    t.className = 'typing';
+    for (var i = 0; i < 3; i++) {
+      var d = document.createElement('div');
+      d.className = 'td';
+      t.appendChild(d);
+    }
+    wrap.appendChild(av);
+    wrap.appendChild(t);
+    msgsEl.appendChild(wrap);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+  }
+
+  function removeTyping() {
+    var t = document.getElementById('typ');
+    if (t) { t.parentNode.removeChild(t); }
+  }
+
+  function getReply(raw) {
+    var t = raw.toLowerCase();
+    // PM knowledge
+    if (t.indexOf('scrum') !== -1 || t.indexOf('agile') !== -1 || t.indexOf('sprint') !== -1) {
+      return 'Keven ist PSM I zertifiziert (Scrum.org). Er hat Scrum-Prozesse in Projekten angewendet: Sprint Planning, Daily Standups, Retrospektiven, Backlog Refinement. Sein Fokus: Scrum als Werkzeug nutzen, nicht als Religion betreiben.';
+    }
+    if (t.indexOf('roadmap') !== -1 || t.indexOf('priorisier') !== -1 || t.indexOf('backlog') !== -1) {
+      return 'Keven hat Roadmaps mit RICE und MoSCoW priorisiert — beide Methoden setzt er gezielt ein. RICE für datengetriebene Entscheidungen, MoSCoW für schnelle Team-Alignment. Beim InGrow-Projekt hat er das komplett durchgeführt.';
+    }
+    if (t.indexOf('stakeholder') !== -1 || t.indexOf('kommunikat') !== -1) {
+      return 'Stakeholder-Kommunikation ist eine seiner stärksten Seiten — 18+ Jahre Erfahrung mit anspruchsvollen Kunden auf Entscheiderebene. Er übersetzt technische Themen in Business-Sprache und umgekehrt.';
+    }
+    if (t.indexOf('discovery') !== -1 || t.indexOf('research') !== -1 || t.indexOf('interview') !== -1 || t.indexOf('nutzer') !== -1) {
+      return 'Keven hat User Discovery beim InGrow-Projekt durchgeführt: 5 qualitative Tiefeninterviews, Affinity Mapping, Empathy Maps, 3 Personas. Erkenntnis: Motivation ist ein emotionales Problem, kein Produktivitätsproblem.';
+    }
+    if (t.indexOf('kpi') !== -1 || t.indexOf('metrik') !== -1 || t.indexOf('data') !== -1 || t.indexOf('metr') !== -1) {
+      return 'Keven denkt in Metriken: Retention, Activation Rate, Task Completion. Beim InGrow-Projekt hat er ein KPI-Framework definiert. Bei Automationen misst er Zeit-Ersparnis und Fehlerreduktion als primäre Impact-Metriken.';
+    }
+    if (t.indexOf('mvp') !== -1 || t.indexOf('prototyp') !== -1 || t.indexOf('launch') !== -1) {
+      return 'Keven hat mit MVP Canvas gearbeitet und einen klickbaren Prototyp in Figma deployed. Sein Ansatz: so früh wie möglich etwas Testbares bauen — Feedback vor Features.';
+    }
+    if (t.indexOf('automation') !== -1 || t.indexOf('n8n') !== -1 || t.indexOf('workflow') !== -1) {
+      return 'Keven baut echte n8n-Workflows: Datenextraktion, KI-gestützte Verarbeitung, automatische Outputs. Sein Job-Automation-Projekt zeigt das live — täglich laufende Prozesse die sonst Stunden dauern würden.';
+    }
+
+    var t = raw.toLowerCase();
+    if (t.indexOf('besonder') !== -1 || t.indexOf('unique') !== -1 || t.indexOf('unterschied') !== -1) {
+      return 'Keven verbindet drei seltene Welten: 18+ Jahre echte Kundenerfahrung, fundiertes IT-Produktmanagement (10+ Zertifikate) und echte AI-Kompetenz. Er baut Workflows, keine Prompts. Diese Kombination findet man kaum.';
+    }
+    if (t.indexOf('rolle') !== -1 || t.indexOf('job') !== -1 || t.indexOf('stelle') !== -1 || t.indexOf('position') !== -1) {
+      return 'Keven sucht Remote-Rollen in: Product Manager, Customer Success Manager oder AI Strategist. Berlin/Hybrid auch möglich. Sofort verfügbar.';
+    }
+    if (t.indexOf('gehalt') !== -1 || t.indexOf('salary') !== -1 || t.indexOf('verdien') !== -1) {
+      return 'Kevens Gehaltsvorstellung teilt er gerne im persönlichen Gespräch mit — schreib ihm einfach über LinkedIn oder das Kontaktformular.';
+    }
+    if (t.indexOf('ingrow') !== -1 || t.indexOf('habit') !== -1 || t.indexOf('abschluss') !== -1 || t.indexOf('case') !== -1) {
+      return 'InGrow ist Kevens Abschlussprojekt — vollständiger Double-Diamond: 5 Tiefeninterviews, Affinity Mapping, 3 Personas, MoSCoW, RICE, klickbarer Prototyp. Kern-Erkenntnis: Motivation ist ein emotionales Problem, kein Produktivitätsproblem.';
+    }
+    if (t.indexOf('skill') !== -1 || t.indexOf('tool') !== -1 || t.indexOf('zertifi') !== -1) {
+      return 'Top Skills: n8n, Prompt Engineering, PSM I, Customer Journey Mapping, CRM, Figma. Zertifikate: PSM I, Digital Transformation Manager (IHK), AI for PM (Google), AI for Designers (IxDF).';
+    }
+    if (t.indexOf('projekt') !== -1 || t.indexOf('portfolio') !== -1 || t.indexOf('muse') !== -1) {
+      return 'Zwei starke Projekte: 1) The Digital Muse — AI-Brand-System, live: keoh030.github.io/Muse-/  2) InGrow — vollständiger UX/PM-Prozess von Research bis Prototyp.';
+    }
+    if (t.indexOf('kontakt') !== -1 || t.indexOf('mail') !== -1 || t.indexOf('schreib') !== -1) {
+      return 'Direkt erreichbar über LinkedIn: linkedin.com/in/keven-ohlew — oder das Kontaktformular im Hire-Bereich.';
+    }
+    if (t.indexOf('verfügbar') !== -1 || t.indexOf('wann') !== -1 || t.indexOf('start') !== -1) {
+      return 'Keven ist ab sofort verfügbar. Remote bevorzugt, Berlin/Hybrid auch möglich.';
+    }
+    if (t.indexOf('warum') !== -1 || t.indexOf('hire') !== -1 || t.indexOf('einstell') !== -1) {
+      return 'Weil Keven nicht redet — er baut. The Digital Muse entstand in 2 Wochen ohne Budget. InGrow zeigt strategisches PM-Denken von Anfang bis Ende. Beide Projekte sind live nachweisbar.';
+    }
+    var fallbacks = [
+      'Das weiß ich nicht genau — aber: Keven ist PSM I zertifiziert, hat n8n-Workflows gebaut die täglich laufen, und hat ein Produkt komplett von Research bis Prototyp entwickelt. Was willst du genauer wissen?',
+      'Gute Frage! Was ich sagen kann: Keven kombiniert 18+ Jahre Erfahrung mit Menschen und Prozessen, echte KI-Projekte und 10+ Zertifikate. Frag mich nach Scrum, Roadmaps, Projekten oder Gehaltsvorstellung.',
+      'Da bin ich überfragt — schreib Keven direkt über LinkedIn oder das Kontaktformular. Aber vorher: Er beherrscht Roadmapping, User Research, Prompt Engineering und Automatisierung mit n8n. Eine seltene Kombination.',
+      'Das weiß ich nicht — aber Keven baut statt zu planen: Digital Muse live in 2 Wochen, Job Automation täglich laufend, InGrow von Interview bis Prototyp. Was davon interessiert dich?',
+    ];
+    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+  }
+
+  function sendMsg() {
+    var text = inEl.value.trim();
+    if (!text) { return; }
+    inEl.value = '';
+    addMsg(text, true);
+    showTyping();
+    sendBtn.disabled = true;
+    setTimeout(function() {
+      removeTyping();
+      addMsg(getReply(text), false);
+      sendBtn.disabled = false;
+    }, 850);
+  }
+
+  sendBtn.addEventListener('click', sendMsg);
+  inEl.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { sendMsg(); }
+  });
+  document.querySelectorAll('.sq').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      inEl.value = btn.getAttribute('data-q');
+      sendMsg();
+    });
+  });
+
+  /* --- HAMBURGER --- */
+  var burger = document.getElementById('nav-burger');
+  var navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

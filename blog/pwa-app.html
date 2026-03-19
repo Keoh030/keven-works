@@ -129,7 +129,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
 <article class="post-body">
 
-  <p>Heute Abend habe ich mein Dashboard auf dem Mac geöffnet. Nicht im Browser. Nicht als Tab. Als App — direkt im Dock, eigenes Icon, eigenes Fenster.</p>
+  <p>Heute Abend habe ich mein Dashboard auf dem Mac geöffnet. Nicht im Browser. Nicht als Tab. Als App, direkt im Dock, eigenes Icon, eigenes Fenster.</p>
 
   <p>Dasselbe auf dem Samsung. Home Screen. Ein Tap. Dashboard offen.</p>
 
@@ -137,15 +137,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
   <div class="post-break"><div class="post-break-dot"></div></div>
 
-  <p>Was dahinter steckt heißt PWA — Progressive Web App. Eine Technologie die seit Jahren existiert und trotzdem kaum jemand nutzt. Das Prinzip ist simpel: Du baust eine normale Website, fügst drei Dateien hinzu, und der Browser behandelt sie wie eine native App.</p>
+  <p>Was dahinter steckt heißt PWA, Progressive Web App. Eine Technologie die seit Jahren existiert und trotzdem kaum jemand nutzt. Das Prinzip ist simpel: Du baust eine normale Website, fügst drei Dateien hinzu, und der Browser behandelt sie wie eine native App.</p>
 
   <p>Die drei Dateien:</p>
 
-  <p><strong>manifest.json</strong> — sagt dem Browser wie die App heißt, welches Icon sie hat, wie sie sich öffnen soll. Kein Browser-Chrome, kein Adressfeld. Standalone.</p>
+  <p><strong>manifest.json</strong> sagt dem Browser wie die App heißt, welches Icon sie hat, wie sie sich öffnen soll. Kein Browser-Chrome, kein Adressfeld. Standalone.</p>
 
-  <p><strong>sw.js</strong> — ein Service Worker. Läuft im Hintergrund, cached die wichtigsten Dateien, sorgt dafür dass die App auch bei schlechtem Netz reagiert.</p>
+  <p><strong>sw.js</strong> ist ein Service Worker. Er läuft im Hintergrund, cached die wichtigsten Dateien und sorgt dafür dass die App auch bei schlechtem Netz reagiert.</p>
 
-  <p><strong>Icons</strong> — 192px und 512px als PNG. Der Home Screen und der Dock brauchen das.</p>
+  <p><strong>Icons</strong> in 192px und 512px als PNG. Der Home Screen und der Dock brauchen das.</p>
 
   <div class="post-quote">
     <p>Ein Werkzeug das man benutzt ist besser als eines das man suchen muss.</p>
@@ -157,17 +157,17 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
   <p>Was dabei fast schiefgelaufen ist:</p>
 
-  <p><strong>Drei kompromittierte Tokens in einer Session.</strong> Einmal im Chat geteilt, einmal doppelt eingefügt, einmal als Screenshot sichtbar. Jedes Mal sofort widerrufen, neuer Token, weiter. Das ist kein Versagen — das ist lernen unter Zeitdruck.</p>
+  <p><strong>Drei kompromittierte Tokens in einer Session.</strong> Einmal im Chat geteilt, einmal doppelt eingefügt, einmal als Screenshot sichtbar. Jedes Mal sofort widerrufen, neuer Token, weiter. Das ist kein Versagen. Das ist lernen unter Zeitdruck.</p>
 
-  <p><strong>Zero Trust und PWA können sich beißen.</strong> Wenn der Service Worker Cloudflare-Login-URLs cached, kommt man nicht mehr rein. Die Lösung: den SW anweisen, alles von cloudflareaccess.com durchzulassen ohne Cache. Drei Zeilen Code.</p>
+  <p><strong>Zero Trust und PWA können sich beißen.</strong> Wenn der Service Worker Cloudflare-Login-URLs cached, kommt man nicht mehr rein. Die Lösung war drei Zeilen Code, die dem Service Worker sagen alles von Cloudflare einfach durchzulassen.</p>
 
-  <p><strong>macOS blockiert neue Apps.</strong> Selbst wenn die App installiert ist — beim ersten Start kommt eine Sicherheitswarnung. Rechtsklick, Öffnen, bestätigen. Einmalig. Danach öffnet sie normal.</p>
+  <p><strong>macOS blockiert neue Apps.</strong> Selbst wenn die App installiert ist, kommt beim ersten Start eine Sicherheitswarnung. Rechtsklick, Öffnen, bestätigen. Einmalig. Danach öffnet sie normal.</p>
 
   <div class="post-break"><div class="post-break-dot"></div></div>
 
-  <p>Was mich dabei am meisten beschäftigt hat: Wie wenig es braucht.</p>
+  <p>Was mich dabei am meisten beschäftigt hat: wie wenig es braucht.</p>
 
-  <p>Drei Dateien. Ein Push-Befehl. Dreißig Sekunden bis es live ist. Und dann ist das Dashboard eine App — auf jedem Gerät, überall erreichbar, passwortgeschützt durch Zero Trust, automatisch aktuell bei jedem Update.</p>
+  <p>Drei Dateien. Ein Push-Befehl. Dreißig Sekunden bis es live ist. Und dann ist das Dashboard eine App auf jedem Gerät, überall erreichbar, passwortgeschützt, automatisch aktuell bei jedem Update.</p>
 
   <p>Das ist kein großes Engineering-Projekt. Das ist ein Nachmittag Arbeit mit dem richtigen Fokus.</p>
 
@@ -179,7 +179,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
   <p>Morgen ist MST Kickoff. Mein erstes bezahltes Projekt als freier KI-Berater.</p>
 
-  <p>Ich werde das Dashboard dabei haben. Auf dem Mac, im Dock. Mit Checkliste, Kundendaten, nächsten Schritten — alles an einem Ort, alles sicher, alles aktuell.</p>
+  <p>Ich werde das Dashboard dabei haben. Auf dem Mac, im Dock. Mit Checkliste, Kundendaten und nächsten Schritten. Alles an einem Ort, alles sicher, alles aktuell.</p>
 
   <p>Das ist kein Zufallsprodukt. Das ist ein System das ich gebaut habe damit ich nicht mehr suchen muss.</p>
 

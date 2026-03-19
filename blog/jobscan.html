@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wie ich meinen KI-Bewerbungsassistenten JOBSCAN zum Laufen gebracht habe — und was dabei fast alles schiefgelaufen ist.">
+<meta name="description" content="Wie ich meinen KI-Bewerbungsassistenten JOBSCAN zum Laufen gebracht habe. Und was dabei fast alles schiefgelaufen ist.">
 <title>Systeme die funktionieren — Keven Ohlew</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +124,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
   </div>
 
   <h1 class="post-title">Systeme die<br><span>funktionieren.</span></h1>
-  <p class="post-subtitle">Wie ich JOBSCAN, Whisper und eine Claude API in einem Nachmittag zum Laufen gebracht habe — und was dabei fast alles schiefgelaufen ist.</p>
+  <p class="post-subtitle">Wie ich JOBSCAN, Whisper und eine Claude API in einem Nachmittag zum Laufen gebracht habe. Und was dabei fast alles schiefgelaufen ist.</p>
 </div>
 
 <hr class="post-rule">
@@ -133,13 +133,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
   <p>Heute hat JOBSCAN zum ersten Mal funktioniert.</p>
 
-  <p>Das klingt simpel. Ist es aber nicht. Hinter diesem Satz stecken ein falscher API Key, ein Evaluation-Account ohne Credits, ein kaputtes Alias im Finder, und die Erkenntnis dass ein API Key nach dem Erstellen nur einmal angezeigt wird — danach ist er weg.</p>
+  <p>Das klingt simpel. Ist es aber nicht. Hinter diesem Satz stecken ein falscher API Key, ein Evaluation-Account ohne Credits, ein kaputtes Alias im Finder, und die Erkenntnis dass ein API Key nach dem Erstellen nur einmal angezeigt wird. Danach ist er weg.</p>
 
   <p>Aber er läuft. Und das ist alles was zählt.</p>
 
   <div class="post-break"><div class="post-break-dot"></div></div>
 
-  <p>JOBSCAN ist mein KI-Bewerbungsassistent. Er läuft direkt im Browser, ohne Backend, ohne Server. Du gibst eine Stellenanzeige rein — er analysiert sie mit Claude, schreibt dir ein passendes Anschreiben, gibt dir eine Match-Bewertung, zeigt dir was du betonen solltest.</p>
+  <p>JOBSCAN ist mein KI-Bewerbungsassistent. Er läuft direkt im Browser, ohne Backend, ohne Server. Du gibst eine Stellenanzeige rein. Er analysiert sie mit Claude, schreibt dir ein passendes Anschreiben, gibt dir eine Match-Bewertung, zeigt dir was du betonen solltest.</p>
 
   <p>Das Prinzip dahinter ist einfach: Claude API direkt aus dem Browser ansprechen. Kein Umweg über eigene Server. Kein monatlicher Hosting-Cost. Eine HTML-Datei, ein API Key, fertig.</p>
 
@@ -147,7 +147,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
     <p>Nicht cool aussehen. Funktionieren.</p>
   </div>
 
-  <p>Das ist der Unterschied zwischen einem Tool das ich zeige und einem Tool das ich benutze. JOBSCAN ist beides — aber heute war der erste Tag wo ich es wirklich benutzt habe.</p>
+  <p>Das ist der Unterschied zwischen einem Tool das ich zeige und einem Tool das ich benutze. JOBSCAN ist beides. Aber heute war der erste Tag wo ich es wirklich benutzt habe.</p>
 
   <div class="post-break"><div class="post-break-dot"></div></div>
 
@@ -155,7 +155,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 
   <p><strong>API Keys nie ein zweites Mal abrufbar.</strong> Du siehst ihn einmal, direkt nach dem Erstellen. Danach ist er weg. Ich habe zwei Keys gebraucht um das zu verstehen.</p>
 
-  <p><strong>Evaluation Access ≠ echter Zugang.</strong> Anthropic gibt dir einen kostenlosen Account zum Testen — aber ohne Credits funktioniert die API nicht. 5$ reichen für den Start. Den Unterschied merkt man erst wenn der erste Call mit 401 zurückkommt.</p>
+  <p><strong>Evaluation Access ≠ echter Zugang.</strong> Anthropic gibt dir einen kostenlosen Account zum Testen. Aber ohne Credits funktioniert die API nicht. 5$ reichen für den Start. Den Unterschied merkt man erst wenn der erste Call mit 401 zurückkommt.</p>
 
   <p><strong>Kaputte Alias-Dateien im Finder können trotzdem schreiben.</strong> Mein Website-Ordner war als Alias verknüpft und sah kaputt aus. Aber die Dateien die ich über den Pfad geschrieben habe landeten trotzdem am richtigen Ort. Manchmal funktionieren Dinge ohne dass man es sieht.</p>
 

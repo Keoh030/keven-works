@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wie ich als Einzelperson arbeite wie ein Team. Mein System aus Dashboard, KI und Cloud. Kein Geheimnis, nur Gewohnheit.">
+<title>Mein System — Keven Ohlew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080807;
+  --off: #F0EBE3;
+  --rust: #C4341A;
+  --dim: #181715;
+  --mid: #7A746E;
+  --gold: #BFA27A;
+  --warm: #2A2826;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--off); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
+
+#cur, #cur-r { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; top: 0; left: 0; transform: translate(-50%,-50%); }
+#cur { width: 8px; height: 8px; background: var(--rust); transition: background .25s; }
+#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,7,.94); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.05); }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .15em; color: var(--off); text-decoration: none; }
+.logo span { color: var(--rust); }
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+.nav-a { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(240,235,227,.55); text-decoration: none; transition: color .25s; }
+.nav-a:hover, .nav-a.active { color: var(--off); }
+.nav-cta { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; background: var(--rust); color: var(--off); padding: .65rem 1.5rem; text-decoration: none; transition: background .25s; font-weight: 500; }
+.nav-cta:hover { background: #a02a14; }
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--off); transition: transform .3s, opacity .3s; }
+@media (max-width: 680px) {
+  .nav-burger { display: flex; }
+  .nav-links { display: none; position: fixed; top: 57px; left: 0; right: 0; background: rgba(8,8,7,.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; gap: 0; padding: 1rem 0 1.5rem; border-bottom: 1px solid rgba(255,255,255,.07); z-index: 99; }
+  .nav-links.open { display: flex; }
+  .nav-a { font-size: .65rem; padding: .85rem 2rem; width: 100%; text-align: center; }
+  .nav-cta { margin-top: .5rem; padding: .75rem 2.5rem; font-size: .65rem; }
+}
+
+.post-header { padding: 10rem 3rem 5rem; max-width: 780px; margin: 0 auto; }
+.post-back { display: inline-flex; align-items: center; gap: .5rem; font-size: .52rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); text-decoration: none; margin-bottom: 3rem; transition: color .25s; }
+.post-back:hover { color: var(--off); }
+.post-back svg { width: 14px; height: 14px; }
+.post-meta-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.post-pill { font-size: .48rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); border: 1px solid rgba(196,52,26,.35); padding: .3rem .8rem; }
+.post-date { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
+.post-read { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
+.post-read::before { content: '·'; margin-right: 1rem; }
+.post-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: .03em; line-height: .92; color: var(--off); margin-bottom: 1.5rem; }
+.post-title span { color: var(--rust); }
+.post-subtitle { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.35rem); color: var(--gold); line-height: 1.5; max-width: 540px; }
+.post-rule { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 3.5rem auto; max-width: 780px; }
+
+.post-body { max-width: 680px; margin: 0 auto; padding: 0 3rem 8rem; }
+.post-body p { font-size: .9rem; line-height: 1.95; color: rgba(240,235,227,.75); margin-bottom: 1.5rem; }
+.post-body p strong { color: var(--off); font-weight: 500; }
+
+.post-break { display: flex; align-items: center; gap: 1.2rem; margin: 3rem 0; }
+.post-break::before, .post-break::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.07); }
+.post-break-dot { width: 5px; height: 5px; background: var(--rust); border-radius: 50%; flex-shrink: 0; }
+
+.post-quote { border-left: 3px solid var(--rust); padding: 1.2rem 2rem; margin: 2.5rem 0; background: rgba(196,52,26,.04); }
+.post-quote p { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.15rem !important; line-height: 1.6 !important; color: var(--off) !important; margin-bottom: 0 !important; }
+
+.post-closing { text-align: center; padding: 3rem 0 1rem; }
+.post-closing .closing-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: .06em; color: var(--off); line-height: 1; display: block; margin-bottom: .5rem; }
+.post-closing .closing-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1rem; color: var(--rust); }
+
+.post-footer { border-top: 1px solid rgba(255,255,255,.07); padding: 3rem; max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.post-footer-left { font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+.post-footer-link { font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--off); text-decoration: none; border-bottom: 1px solid rgba(240,235,227,.2); padding-bottom: .1rem; transition: color .25s, border-color .25s; }
+.post-footer-link:hover { color: var(--rust); border-color: var(--rust); }
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<nav>
+  <a href="/" class="logo">KE<span>O</span>H</a>
+  <div class="nav-links" id="nav-links">
+    <a href="/#arbeit" class="nav-a">Arbeit</a>
+    <a href="/#produkte" class="nav-a">Produkte</a>
+    <a href="/blog/index.html" class="nav-a active">Blog</a>
+    <a href="mailto:kevenohlew@googlemail.com" class="nav-cta">Kontakt</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="post-header">
+  <a href="index.html" class="post-back">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="10,3 5,8 10,13"/>
+    </svg>
+    Alle Posts
+  </a>
+
+  <div class="post-meta-row">
+    <span class="post-pill">Maschine</span>
+    <span class="post-date">21. März 2026</span>
+    <span class="post-read">4 min</span>
+  </div>
+
+  <h1 class="post-title">Mein <span>System.</span></h1>
+  <p class="post-subtitle">Ich arbeite alleine. Aber ich arbeite nicht wie einer.</p>
+</div>
+
+<hr class="post-rule">
+
+<article class="post-body">
+
+  <p>Leute fragen mich manchmal wie ich das alles alleine schaffe.</p>
+
+  <p>Ehrliche Antwort: ich schaffe es nicht alleine. Ich habe ein System.</p>
+
+  <p>Kein Team. Kein Büro. Kein Investor. Aber ein System das funktioniert, das ich jeden Tag benutze, und das mir Zeit zurückgibt die andere Menschen in Meetings verbringen.</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Der Kern ist das Dashboard. Ich habe es selbst gebaut. Es läuft im Browser, es lebt in der Cloud, und es zeigt mir jeden Morgen genau drei Dinge: was jetzt passiert, was als nächstes dran ist, und was heute erledigt werden muss.</p>
+
+  <p>Kein Trello. Kein Notion. Keine App die mir sagt wie ich denken soll.</p>
+
+  <p>Mein Dashboard denkt wie ich. Weil ich es so gebaut habe.</p>
+
+  <p>Es hat ein Backlog für Ideen, einen Finanzüberblick, eine Roadmap für Projekte, und einen Bereich für aktive Kunden. Alles auf einem Screen. Alles sofort sichtbar. Wenn ich morgens den Laptop aufklappe, weiß ich in dreißig Sekunden wo ich stehe.</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Das zweite Werkzeug ist KI. Nicht als Abkürzung. Als Denkpartner.</p>
+
+  <p>Ich arbeite mit Claude Code. Das ist kein Chatbot den du fragst und der dir einen Text rauskopiert. Das ist ein System das alle meine Dateien kennt, meinen Code versteht, meine Projekte kennt, und mit dem ich in Echtzeit denken kann.</p>
+
+  <p>Heute habe ich damit innerhalb von zwei Stunden einen vollständigen Pitch für einen Sportmarken-Kunden vorbereitet. Marktanalyse, Zielgruppen, konkrete Content-Ideen, Pilot-Struktur, Preisrahmen. Alles durch Gespräch. Alles sofort einsatzbereit.</p>
+
+  <p>Das ist nicht Magie. Das ist ein Werkzeug das ich gelernt habe zu benutzen.</p>
+
+  <div class="post-quote">
+    <p>KI ersetzt mich nicht. Sie macht mich schneller als jeden der sie nicht benutzt.</p>
+  </div>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Das dritte Stück ist Cloudflare. Alles was ich baue läuft dort. Meine Website, mein Dashboard, meine APIs, meine Demos für Kunden.</p>
+
+  <p>Kein eigener Server. Keine monatliche Rechnung die ich fürchte. Kein IT-Setup das Stunden kostet.</p>
+
+  <p>Ich schreibe Code, ich pushe ihn, er ist live. In manchen Fällen dauert das weniger als zwei Minuten von der Idee bis zur öffentlichen URL.</p>
+
+  <p>Das klingt nach Kleinigkeit. Es ist keine Kleinigkeit. Geschwindigkeit ist Vertrauen. Wenn ein Kunde sagt "kannst du das zeigen" und ich sage "schau mal jetzt auf dein Handy" dann ist das ein anderes Gespräch als "ich schicke dir das nächste Woche."</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Und dann ist da noch Git.</p>
+
+  <p>Jede Änderung die ich mache wird gespeichert. Jeder Schritt ist nachvollziehbar. Wenn etwas kaputt geht, gehe ich zurück. Wenn etwas gut war, bleibt es.</p>
+
+  <p>Das klingt nach Entwickler-Kram. Aber es ist eigentlich eine Denkweise. Nichts verlieren. Alles dokumentieren. Jeden Fortschritt festhalten.</p>
+
+  <p>Ich habe das Gewohnheit nennen gelernt. Nicht Disziplin. Gewohnheit. Gewohnheiten laufen von alleine. Disziplin kostet Kraft.</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Ich bin kein Entwickler von Beruf. Ich war Kellner. Ich habe Teller gewaschen. Ich habe angefangen KI-Systeme zu bauen weil ich verstanden habe, dass das Wissen nicht hinter einer Ausbildung steckt. Es steckt dahinter, dass man anfängt.</p>
+
+  <p>Das System das ich heute nutze habe ich mir Stück für Stück zusammengebaut. Jeden Tag ein bisschen besser. Jeden Monat ein bisschen schneller.</p>
+
+  <p>Es ist nicht perfekt. Es ist meins.</p>
+
+  <p>Und das macht den Unterschied.</p>
+
+  <div class="post-closing">
+    <span class="closing-big">Fang an zu bauen.</span>
+    <span class="closing-sub">keven-ohlew.com</span>
+  </div>
+
+</article>
+
+<footer class="post-footer">
+  <span class="post-footer-left">Keven Ohlew · KI-Berater & Maker</span>
+  <a href="index.html" class="post-footer-link">Mehr Posts lesen</a>
+</footer>
+
+<script>
+const cur = document.getElementById('cur');
+const curR = document.getElementById('cur-r');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+  curR.style.left = e.clientX + 'px';
+  curR.style.top = e.clientY + 'px';
+});
+document.getElementById('burger').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

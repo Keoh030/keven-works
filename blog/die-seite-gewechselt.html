@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ich war drei Jahre Kellner auf diesem Golfplatz. Jetzt spiele ich dort Golf. Und mein erster Kunde hat meine Website genau dort gesehen.">
+<title>Ich habe die Seite gewechselt — Keven Ohlew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080807;
+  --off: #F0EBE3;
+  --rust: #C4341A;
+  --dim: #181715;
+  --mid: #7A746E;
+  --gold: #BFA27A;
+  --warm: #2A2826;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--off); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
+
+#cur, #cur-r { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; top: 0; left: 0; transform: translate(-50%,-50%); }
+#cur { width: 8px; height: 8px; background: var(--rust); transition: background .25s; }
+#cur-r { width: 32px; height: 32px; border: 1px solid rgba(196,52,26,.35); transition: left .1s, top .1s; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,7,.94); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.05); }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .15em; color: var(--off); text-decoration: none; }
+.logo span { color: var(--rust); }
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+.nav-a { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(240,235,227,.55); text-decoration: none; transition: color .25s; }
+.nav-a:hover, .nav-a.active { color: var(--off); }
+.nav-cta { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; background: var(--rust); color: var(--off); padding: .65rem 1.5rem; text-decoration: none; transition: background .25s; font-weight: 500; }
+.nav-cta:hover { background: #a02a14; }
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--off); transition: transform .3s, opacity .3s; }
+@media (max-width: 680px) {
+  .nav-burger { display: flex; }
+  .nav-links { display: none; position: fixed; top: 57px; left: 0; right: 0; background: rgba(8,8,7,.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; gap: 0; padding: 1rem 0 1.5rem; border-bottom: 1px solid rgba(255,255,255,.07); z-index: 99; }
+  .nav-links.open { display: flex; }
+  .nav-a { font-size: .65rem; padding: .85rem 2rem; width: 100%; text-align: center; }
+  .nav-cta { margin-top: .5rem; padding: .75rem 2.5rem; font-size: .65rem; }
+}
+
+.post-header { padding: 10rem 3rem 5rem; max-width: 780px; margin: 0 auto; }
+.post-back { display: inline-flex; align-items: center; gap: .5rem; font-size: .52rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); text-decoration: none; margin-bottom: 3rem; transition: color .25s; }
+.post-back:hover { color: var(--off); }
+.post-back svg { width: 14px; height: 14px; }
+.post-meta-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.post-pill { font-size: .48rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); border: 1px solid rgba(196,52,26,.35); padding: .3rem .8rem; }
+.post-date { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
+.post-read { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
+.post-read::before { content: '·'; margin-right: 1rem; }
+.post-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: .03em; line-height: .92; color: var(--off); margin-bottom: 1.5rem; }
+.post-title span { color: var(--rust); }
+.post-subtitle { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.35rem); color: var(--gold); line-height: 1.5; max-width: 540px; }
+.post-rule { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 3.5rem auto; max-width: 780px; }
+
+.post-body { max-width: 680px; margin: 0 auto; padding: 0 3rem 8rem; }
+.post-body p { font-size: .9rem; line-height: 1.95; color: rgba(240,235,227,.75); margin-bottom: 1.5rem; }
+.post-body p strong { color: var(--off); font-weight: 500; }
+
+.post-break { display: flex; align-items: center; gap: 1.2rem; margin: 3rem 0; }
+.post-break::before, .post-break::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.07); }
+.post-break-dot { width: 5px; height: 5px; background: var(--rust); border-radius: 50%; flex-shrink: 0; }
+
+.post-quote { border-left: 3px solid var(--rust); padding: 1.2rem 2rem; margin: 2.5rem 0; background: rgba(196,52,26,.04); }
+.post-quote p { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.15rem !important; line-height: 1.6 !important; color: var(--off) !important; margin-bottom: 0 !important; }
+
+.post-closing { text-align: center; padding: 3rem 0 1rem; }
+.post-closing .closing-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: .06em; color: var(--off); line-height: 1; display: block; margin-bottom: .5rem; }
+.post-closing .closing-sub { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1rem; color: var(--rust); }
+
+.post-footer { border-top: 1px solid rgba(255,255,255,.07); padding: 3rem; max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.post-footer-left { font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+.post-footer-link { font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--off); text-decoration: none; border-bottom: 1px solid rgba(240,235,227,.2); padding-bottom: .1rem; transition: color .25s, border-color .25s; }
+.post-footer-link:hover { color: var(--rust); border-color: var(--rust); }
+
+@media (max-width: 680px) {
+  .post-header { padding: 8rem 1.5rem 3rem; }
+  .post-body { padding: 0 1.5rem 6rem; }
+  .post-footer { padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<nav>
+  <a href="../index.html" class="logo">KE<span>O</span>H</a>
+  <div class="nav-links" id="nav-links">
+    <a href="../index.html" class="nav-a">Start</a>
+    <a href="index.html" class="nav-a active">Blog</a>
+    <a href="../index.html#skills" class="nav-a">Skills</a>
+    <a href="../index.html#projects" class="nav-a">Projekte</a>
+    <a href="mailto:kevenohlew@googlemail.com" class="nav-cta">Kontakt</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="post-header">
+  <a href="index.html" class="post-back">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="10,3 5,8 10,13"/>
+    </svg>
+    Alle Posts
+  </a>
+
+  <div class="post-meta-row">
+    <span class="post-pill">Aufstieg</span>
+    <span class="post-date">21. März 2026</span>
+    <span class="post-read">3 min</span>
+  </div>
+
+  <h1 class="post-title">Ich habe die<br><span>Seite</span> gewechselt.</h1>
+  <p class="post-subtitle">Vom Kellner zum Gast. Auf demselben Platz. Das ist kein Zufall.</p>
+</div>
+
+<hr class="post-rule">
+
+<article class="post-body">
+
+  <p>Ich stehe auf demselben Golfplatz wo ich drei Jahre lang Teller getragen habe.</p>
+
+  <p>Diesmal als Gast.</p>
+
+  <p>Das ist vor einem Jahr passiert. Ich habe angefangen Golf zu spielen. Auf demselben Platz. Mit denselben Menschen die ich früher bedient habe. Ich kenne jeden Winkel dieses Platzes. Die Küche. Den Lieferanteneingang. Den Geruch des Personalraums.</p>
+
+  <p>Jetzt kenne ich auch das 9. Loch.</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Mein erster Kunde hat meine Website auf diesem Platz gesehen. Derselbe Platz. Andere Seite des Tisches.</p>
+
+  <p>Ich sage das nicht um zu prahlen. Ich sage das weil ich vor zwei Jahren nicht geglaubt hätte, dass das möglich ist.</p>
+
+  <p>Mein Coach hat mein JOBSCAN-Tool gesehen. Er hat meinen Willen gelobt. Meine Kreativität. Mein Lehrer sagte: "echt krass was du baust." Ehemalige Mitschüler schreiben mir. Menschen die meine Arbeit sehen sagen, sie finden meinen Weg inspirierend.</p>
+
+  <p>Ich baue seit einem Monat nach meiner Umschulung. Kein Chef. Kein Büro. Kein fester Vertrag.</p>
+
+  <p>Und ich genieße es.</p>
+
+  <div class="post-break"><div class="post-break-dot"></div></div>
+
+  <p>Das ist nicht selbstverständlich. Viele in meiner Situation suchen gerade eine Stelle. Schreiben Bewerbungen. Warten auf Antworten die nicht kommen.</p>
+
+  <p>Ich baue lieber.</p>
+
+  <p>Nicht weil ich arrogant bin. Sondern weil ich weiß was ich kann. Weil ich drei Jahre lang gelernt habe unter Druck zu funktionieren. Weil die Gastro mir mehr über Systeme beigebracht hat als jeder Kurs. Weil ich weiß wie sich ein Abend anfühlt wenn alles gleichzeitig brennt und du trotzdem einen kühlen Kopf behalten musst.</p>
+
+  <p>Das mache ich jetzt. Nur mit Laptop statt Tablett.</p>
+
+  <div class="post-quote">
+    <p>Die Seite wechseln bedeutet nicht, oben anzukommen. Es bedeutet, aufgehört zu haben wo man nicht hingehört.</p>
+  </div>
+
+  <p>Ich suche noch. Kunden. Partner. Jemanden der an das glaubt was ich baue. Aber ich finde den Weg. Das weiß ich jetzt.</p>
+
+  <p>Auf dem 9. Loch.</p>
+
+  <div class="post-closing">
+    <span class="closing-big">Ich habe die Seite gewechselt.</span>
+    <span class="closing-sub">keven-ohlew.com</span>
+  </div>
+
+</article>
+
+<footer class="post-footer">
+  <span class="post-footer-left">Keven Ohlew · KI-Berater & Maker</span>
+  <a href="index.html" class="post-footer-link">Mehr Posts lesen</a>
+</footer>
+
+<script>
+const cur = document.getElementById('cur');
+const curR = document.getElementById('cur-r');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+  curR.style.left = e.clientX + 'px';
+  curR.style.top = e.clientY + 'px';
+});
+document.getElementById('burger').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

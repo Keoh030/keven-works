@@ -1,0 +1,5 @@
+# Blog Entwürfe — nie pushen, nur lokal
+blog/_entwuerfe/
+
+# macOS
+.DS_Store

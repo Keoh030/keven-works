@@ -10,10 +10,11 @@ Das ist das Master-Verzeichnis aller Blog-Posts. Hier wird dokumentiert, was liv
 | # | Datei | Titel | Säule | Datum | Buch-Kapitel |
 |---|---|---|---|---|---|
 | 1 | manifest.html | Vom Funktionieren zum Erschaffen | Aufstieg | — | Vorwort / Kapitel 1 |
-| 2 | gastro-zu-ki.html | Von der Spülküche zum KI-System | Aufstieg | 21.03.2026 | Kapitel 2 — Herkunft |
+| 2 | gastro-zu-ki.html | Von der Spülküche zum KI-System | Aufstieg | 20.03.2026 | Kapitel 2 — Herkunft |
 | 3 | jobscan.html | Systeme die funktionieren. | Maschine | 19.03.2026 | Kapitel 6 — Bauen |
 | 4 | pwa-app.html | Kein App Store. Trotzdem App. | Maschine | — | Kapitel 7 — Werkzeuge |
 | 5 | mein-system.html | Mein System. | Maschine | 21.03.2026 | Kapitel 5 — System |
+| 6 | die-seite-gewechselt.html | Ich habe die Seite gewechselt. | Aufstieg | 21.03.2026 | Kapitel 3 — Wendepunkt |
 
 ---
 
@@ -27,29 +28,33 @@ Das ist das Master-Verzeichnis aller Blog-Posts. Hier wird dokumentiert, was liv
 
 ## GEPLANT — Roadmap zum Buch
 
+Titel mit [?] sind NICHT bestätigt — erst nach User-Bestätigung schreiben.
+
 ### Säule: Aufstieg (Kapitel 1-4)
-- [ ] Die Kündigung am Strand — Thailand, was danach, die Entscheidung (Kapitel 3)
-- [ ] Was Gastro wirklich lehrt — Druck, Menschen, Systeme unter Last (Kapitel 4)
+- [x] Vom Funktionieren zum Erschaffen (live — Kapitel 1)
+- [x] Von der Spülküche zum KI-System (live — Kapitel 2)
+- [x] Ich habe die Seite gewechselt (live — Kapitel 3)
+- [ ] Die Kündigung am Strand [?] — Thailand-Story, Szenen zuerst vom User holen (Kapitel 4)
 
 ### Säule: Maschine (Kapitel 5-8)
-- [x] Mein System. (live)
-- [x] Systeme die funktionieren. (live)
-- [x] Kein App Store. Trotzdem App. (live)
-- [ ] Warum ich kein Team brauche — und was das wirklich bedeutet (Kapitel 8)
+- [x] Mein System. (live — Kapitel 5)
+- [x] Systeme die funktionieren. (live — Kapitel 6)
+- [x] Kein App Store. Trotzdem App. (live — Kapitel 7)
+- [ ] [?] Kapitel 8 — Titel noch nicht bestätigt
 
 ### Säule: Projekte & Kunden (Kapitel 9-11)
-- [ ] Erstes bezahltes Projekt — MST: was ich gelernt habe (Kapitel 9)
-- [ ] NORI × Wilson Golf — wie eine Demo einen Raum verändert (Kapitel 10)
-- [ ] Was ich einem Kunden sage wenn er fragt "kannst du das zeigen?" (Kapitel 11)
+- [ ] [?] Erstes bezahltes Projekt — Szenen vom User holen (Kapitel 9)
+- [ ] [?] NORI × Wilson Golf — Szenen vom User holen (Kapitel 10)
+- [ ] [?] Kapitel 11 — Titel noch nicht bestätigt
 
 ### Säule: Mindset & Realität (Kapitel 12-14)
-- [ ] Alleine aufbauen — was das konkret bedeutet um 23 Uhr (Kapitel 12)
-- [ ] Ich war nie der beste Schüler — und trotzdem (Kapitel 13)
-- [ ] Warum schlechte Momente bessere Startschüsse sind als gute Pläne (Kapitel 14)
+- [ ] [?] Kapitel 12 — Titel noch nicht bestätigt (NICHT "um 23 Uhr" — erfunden)
+- [ ] [?] Ich war nie der beste Schüler — Szenen holen (Kapitel 13)
+- [ ] [?] Kapitel 14 — Titel noch nicht bestätigt
 
 ### Säule: Zukunft (Kapitel 15-16)
-- [ ] Was KI mit Arbeit macht — und warum ich das nicht fürchte (Kapitel 15)
-- [ ] Wie mein Leben in drei Jahren aussieht (Kapitel 16)
+- [ ] [?] Was KI mit Arbeit macht — Szenen holen (Kapitel 15)
+- [ ] [?] Wie mein Leben in drei Jahren aussieht — Szenen holen (Kapitel 16)
 
 ---
 
@@ -66,7 +71,7 @@ Teil IV:   Realität (Kap. 12-14) — Was es kostet
 Teil V:    Zukunft (Kap. 15-16) — Wohin ich gehe
 ```
 
-**Fortschritt:** 5 von 16 Kapiteln vorhanden (31%)
+**Fortschritt:** 6 von 16 Kapiteln vorhanden (37%)
 
 ---
 
@@ -75,3 +80,4 @@ Teil V:    Zukunft (Kap. 15-16) — Wohin ich gehe
 | Datum | Aktion |
 |---|---|
 | 21.03.2026 | Bibliothek angelegt. 5 bestehende Posts eingetragen. |
+| 21.03.2026 | Post #6 "die-seite-gewechselt.html" nachgetragen. Fortschritt auf 37%. Unbestätigte Roadmap-Titel mit [?] markiert. |

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wie ich mein persönliches Dashboard ohne App Store als echte App auf Mac und Samsung installiert habe — und was dabei fast schiefgelaufen ist.">
-<title>Kein App Store. Trotzdem App. — Keven Ohlew</title>
+<meta name="description" content="META_DESCRIPTION">
+<title>TITEL — Keven Ohlew</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
 .post-date { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
 .post-read { font-size: .52rem; letter-spacing: .14em; color: var(--mid); }
 .post-read::before { content: '·'; margin-right: 1rem; }
-.post-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 7vw, 6rem); letter-spacing: .03em; line-height: .92; color: var(--off); margin-bottom: 1.5rem; }
+.post-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: .03em; line-height: .92; color: var(--off); margin-bottom: 1.5rem; }
 .post-title span { color: var(--rust); }
 .post-subtitle { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.35rem); color: var(--gold); line-height: 1.5; max-width: 540px; }
 .post-rule { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 3.5rem auto; max-width: 780px; }
@@ -116,83 +116,43 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.4rem 
   </a>
 
   <div class="post-meta-row">
-    <span class="post-pill">Maschine</span>
-    <span class="post-date">19. März 2026</span>
-    <span class="post-read">4 min</span>
+    <span class="post-pill">KATEGORIE</span><!-- Aufstieg / Maschine / Projekt / Mindset -->
+    <span class="post-date">TT. Monat JJJJ</span>
+    <span class="post-read">X min</span>
   </div>
 
-  <h1 class="post-title">Kein App Store.<br><span>Trotzdem App.</span></h1>
-  <p class="post-subtitle">Wie ich mein persönliches Dashboard ohne App Store als echte App auf Mac und Samsung installiert habe — und warum das mehr bedeutet als es klingt.</p>
+  <h1 class="post-title">HEADLINE<br><span>FORTSETZUNG</span></h1>
+  <p class="post-subtitle">Untertitel in DM Serif italic gold.</p>
 </div>
 
 <hr class="post-rule">
 
 <article class="post-body">
 
-  <p>Heute Abend habe ich mein Dashboard auf dem Mac geöffnet. Nicht im Browser. Nicht als Tab. Als App, direkt im Dock, eigenes Icon, eigenes Fenster.</p>
+  <p>Erster Satz. Konkret. Kein Warm-up.</p>
 
-  <p>Dasselbe auf dem Samsung. Home Screen. Ein Tap. Dashboard offen.</p>
-
-  <p>Kein App Store. Kein Entwicklerkonto. Keine Review-Wartezeit. Kein einziger Euro für Vertrieb.</p>
+  <p>Zweiter Absatz.</p>
 
   <div class="post-break"><div class="post-break-dot"></div></div>
 
-  <p>Was dahinter steckt heißt PWA, Progressive Web App. Eine Technologie die seit Jahren existiert und trotzdem kaum jemand nutzt. Das Prinzip ist simpel: Du baust eine normale Website, fügst drei Dateien hinzu, und der Browser behandelt sie wie eine native App.</p>
-
-  <p>Die drei Dateien:</p>
-
-  <p><strong>manifest.json</strong> sagt dem Browser wie die App heißt, welches Icon sie hat, wie sie sich öffnen soll. Kein Browser-Chrome, kein Adressfeld. Standalone.</p>
-
-  <p><strong>sw.js</strong> ist ein Service Worker. Er läuft im Hintergrund, cached die wichtigsten Dateien und sorgt dafür dass die App auch bei schlechtem Netz reagiert.</p>
-
-  <p><strong>Icons</strong> in 192px und 512px als PNG. Der Home Screen und der Dock brauchen das.</p>
+  <p>Mittelteil.</p>
 
   <div class="post-quote">
-    <p>Ein Werkzeug das man benutzt ist besser als eines das man suchen muss.</p>
+    <p>Der eine Satz der bleibt.</p>
   </div>
 
-  <p>Das klingt technisch. Ist es auch. Aber der Effekt ist menschlich: Ich öffne mein Dashboard jetzt ohne nachzudenken. Es ist einfach da. Wie eine App sein sollte.</p>
-
-  <div class="post-break"><div class="post-break-dot"></div></div>
-
-  <p>Was dabei fast schiefgelaufen ist:</p>
-
-  <p><strong>Drei kompromittierte Tokens in einer Session.</strong> Einmal im Chat geteilt, einmal doppelt eingefügt, einmal als Screenshot sichtbar. Jedes Mal sofort widerrufen, neuer Token, weiter. Das ist kein Versagen. Das ist lernen unter Zeitdruck.</p>
-
-  <p><strong>Zero Trust und PWA können sich beißen.</strong> Wenn der Service Worker Cloudflare-Login-URLs cached, kommt man nicht mehr rein. Die Lösung war drei Zeilen Code, die dem Service Worker sagen alles von Cloudflare einfach durchzulassen.</p>
-
-  <p><strong>macOS blockiert neue Apps.</strong> Selbst wenn die App installiert ist, kommt beim ersten Start eine Sicherheitswarnung. Rechtsklick, Öffnen, bestätigen. Einmalig. Danach öffnet sie normal.</p>
-
-  <div class="post-break"><div class="post-break-dot"></div></div>
-
-  <p>Was mich dabei am meisten beschäftigt hat: wie wenig es braucht.</p>
-
-  <p>Drei Dateien. Ein Push-Befehl. Dreißig Sekunden bis es live ist. Und dann ist das Dashboard eine App auf jedem Gerät, überall erreichbar, passwortgeschützt, automatisch aktuell bei jedem Update.</p>
-
-  <p>Das ist kein großes Engineering-Projekt. Das ist ein Nachmittag Arbeit mit dem richtigen Fokus.</p>
-
-  <div class="post-quote">
-    <p>Die meisten Tools werden nicht benutzt weil sie zu weit weg sind. Näher bringen ist die halbe Arbeit.</p>
-  </div>
-
-  <div class="post-break"><div class="post-break-dot"></div></div>
-
-  <p>Morgen ist MST Kickoff. Mein erstes bezahltes Projekt als freier KI-Berater.</p>
-
-  <p>Ich werde das Dashboard dabei haben. Auf dem Mac, im Dock. Mit Checkliste, Kundendaten und nächsten Schritten. Alles an einem Ort, alles sicher, alles aktuell.</p>
-
-  <p>Das ist kein Zufallsprodukt. Das ist ein System das ich gebaut habe damit ich nicht mehr suchen muss.</p>
+  <p>Schluss. Ehrlich. Richtung nach vorne.</p>
 
   <div class="post-closing">
-    <span class="closing-big">Näher bringen.</span>
-    <span class="closing-sub">Dann benutzen.</span>
+    <span class="closing-big">CLOSING LINE.</span>
+    <span class="closing-sub">keven-ohlew.com</span>
   </div>
 
 </article>
 
 <footer class="post-footer">
-  <span class="post-footer-left">Keven Ohlew · 2026</span>
-  <a href="index.html" class="post-footer-link">Alle Posts ansehen</a>
+  <span class="post-footer-left">Keven Ohlew · KI-Berater & Maker</span>
+  <a href="index.html" class="post-footer-link">Mehr Posts lesen</a>
 </footer>
 
 <script>

@@ -78,14 +78,22 @@ Neue Szene nur eintragen nach direkter Bestätigung durch Keven.
 
 ---
 
-## NOCH NICHT BESTÄTIGT — Nicht verwenden!
+## WILSON / ROB
 
-| Detail | Warum unsicher |
+**Szene: Pitch mit Rob**
+- Keven hat mit Rob von Wilson Golf gesprochen
+- Hat in kurzer Zeit einen Pitch vorbereitet (Grundlage für NORI × Wilson Demo)
+- Rob war beeindruckt, geht nach München
+- Bestätigt: 22.03.2026
+
+---
+
+## FALSCH — Nie verwenden
+
+| Detail | Warum |
 |---|---|
-| "Spiegel um 3 Uhr morgens" | Nie vom User erwähnt |
-| "2-Stunden-Pitch" | Genaue Zahl nie bestätigt |
-| Kapitel 12: "um 23 Uhr aufbauen" | Erfunden, komplett falsch |
-| Genaue Daten der früheren Posts | gastro-zu-ki: 20. oder 21.03.? |
+| "Spiegel um 3 Uhr morgens" | Erfunden — aus gastro-zu-ki.html entfernt (22.03.2026) |
+| "um 23 Uhr alleine aufbauen" | Erfunden — nie passiert |
 
 ---
 
